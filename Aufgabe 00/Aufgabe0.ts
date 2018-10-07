@@ -5,7 +5,6 @@ Matrikel: 259418
 Datum: 07.10.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
 */
-namespace A0 {
 
     function hallo() {
         var a: string;
@@ -20,4 +19,3 @@ namespace A0 {
 
     document.addEventListener('DOMContentLoaded', hallo);
 
-}
