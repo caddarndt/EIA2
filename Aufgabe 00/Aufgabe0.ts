@@ -9,7 +9,7 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde n
     function hallo() {
         var a: string;
         var a = prompt("Wie ist dein Name?");
-        var node: any = document.getElementById("content");
+        var node: HTMLElement = document.getElementById("content");
 
         node.innerHTML = "Hallo ";
         node.innerHTML += a;
