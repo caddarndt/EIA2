@@ -37,22 +37,20 @@ var Aufgabe2;
         let specialarray = [names.take2, names.reverse, names.missturn];
         let blackcarray = [names.choosec, names.take4andc];
         /* Hauptfunktion */
-        function game() {
-            let p;
-            let a = prompt("Mit wie vielen Karten willst du spielen?");
-            p = Number(a);
-            for (let i = 0; i < p; i++) {
-                switch (Math.floor(Math.random() * 3)) {
-                    case 0:
-                        buildNormalCard(i);
-                        break;
-                    case 1:
-                        buildSpecialCard(i);
-                        break;
-                    case 2:
-                        buildBlackCard(i);
-                        break;
-                }
+        let p;
+        let a = prompt("Mit wie vielen Karten willst du spielen?");
+        p = Number(a);
+        for (let i = 0; i < p; i++) {
+            switch (Math.floor(Math.random() * 3)) {
+                case 0:
+                    buildNormalCard(i);
+                    break;
+                case 1:
+                    buildSpecialCard(i);
+                    break;
+                case 2:
+                    buildBlackCard(i);
+                    break;
             }
         }
         /* Funktionen zum Bau der Karten */

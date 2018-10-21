@@ -73,7 +73,7 @@ let blackcarray = [names.choosec, names.take4andc];
    
 /* Hauptfunktion */    
     
-function game(): void {
+
         let p: number;
         let a: string = prompt("Mit wie vielen Karten willst du spielen?");
         p = Number(a);
@@ -92,7 +92,7 @@ function game(): void {
                     break;
             }
         }
-}
+
 
 
 /* Funktionen zum Bau der Karten */    
