@@ -50,11 +50,11 @@ var Aufgabe2;
         }
     }
     /* Funktionen zum Bau der Karten */
-    function buildNormalCard(randc, randn, p) {
+    function buildNormalCard(randc, randn, i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
-        div.setAttribute("id", "a" + p);
-        document.getElementById("a" + p).innerHTML += randn;
+        div.setAttribute("id", "a" + i);
+        document.getElementById("a" + i).innerHTML += randn;
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
@@ -66,11 +66,11 @@ var Aufgabe2;
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
-    function buildSpecialCard(randc, rands, p) {
+    function buildSpecialCard(randc, rands, i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
-        div.setAttribute("id", "a" + p);
-        document.getElementById("a" + p).innerHTML += rands;
+        div.setAttribute("id", "a" + i);
+        document.getElementById("a" + i).innerHTML += rands;
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
@@ -82,11 +82,11 @@ var Aufgabe2;
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
-    function buildBlackCard(randb, p) {
+    function buildBlackCard(randb, i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
-        div.setAttribute("id", "a" + p);
-        document.getElementById("a" + p).innerHTML += randb;
+        div.setAttribute("id", "a" + i);
+        document.getElementById("a" + i).innerHTML += randb;
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";

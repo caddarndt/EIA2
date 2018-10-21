@@ -98,12 +98,12 @@ function uno(): void {
 
 /* Funktionen zum Bau der Karten */    
     
-function buildNormalCard(randc: string, randn: string, p: number): void {
+function buildNormalCard(randc: string, randn: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
-        div.setAttribute("id", "a" + p)
-        document.getElementById("a" + p).innerHTML += randn;    
+        div.setAttribute("id", "a" + i)
+        document.getElementById("a" + i).innerHTML += randn;    
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
@@ -119,12 +119,12 @@ function buildNormalCard(randc: string, randn: string, p: number): void {
 }
     
 
-function buildSpecialCard(randc: string, rands: string, p: number): void {
+function buildSpecialCard(randc: string, rands: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
-        div.setAttribute("id", "a" + p)
-        document.getElementById("a" + p).innerHTML += rands;    
+        div.setAttribute("id", "a" + i)
+        document.getElementById("a" + i).innerHTML += rands;    
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
@@ -139,12 +139,12 @@ function buildSpecialCard(randc: string, rands: string, p: number): void {
     
 }
     
-function buildBlackCard(randb: string, p: number): void {
+function buildBlackCard(randb: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
-        div.setAttribute("id", "a" + p)
-        document.getElementById("a" + p).innerHTML += randb;    
+        div.setAttribute("id", "a" + i)
+        document.getElementById("a" + i).innerHTML += randb;    
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
