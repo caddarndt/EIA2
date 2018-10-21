@@ -79,7 +79,7 @@ function uno(): void {
         let a: string = prompt("Mit wie vielen Karten willst du spielen?");
         p = Number(a);
     
-        for (let i: number = 0; i <= 5; i++) {
+        for (let i: number = 0; i <= p; i++) {
             
             switch (Math.floor(Math.random()*3)+1) {
                  case 1:
