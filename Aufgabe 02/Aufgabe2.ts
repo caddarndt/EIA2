@@ -145,46 +145,7 @@ function buildBlackCard(randb: string, p: number): void {
         s.borderRadius = 5 + "px";
         s.color = "white";
 }    
-    
-    function Stapel(_n: number): void {
-            let div: HTMLDivElement = document.createElement("div");
-            document.body.appendChild(div);
-
-            let s: CSSStyleDeclaration = div.style;
-            s.border = "thin solid black";
-            s.position = "absolute";
-            s.backgroundColor = "#f0f0f0";
-            s.width = 50 + "px";
-            s.height = 130 + "px";
-            s.left = (_n + 0.5) * 20 + "px";
-            s.top = (_n + 0.5) * 10 + "px";
-            s.borderRadius = 5 + "px";
-        }
-
-        function Ablage(): void {
-            let div: HTMLDivElement = document.createElement("div");
-            document.body.appendChild(div);
-            div.setAttribute("id", "Ablage")
-
-            document.getElementById("Ablage").innerHTML += "Ablage";
-
-            let s: CSSStyleDeclaration = div.style;
-            s.border = "thin solid black";
-            s.textAlign = "center";
-            s.position = "absolute";
-            s.backgroundColor = "white";
-            s.width = 70 + "px";
-            s.height = 150 + "px";
-            s.right = 50 + "px";
-            s.top = 20 + "px";
-        }
-
-        for (let i: number = 0; i < 3; i++) {
-            Stapel(i);
-        }
-
-        Ablage();
-    
+     
     document.addEventListener('DOMContentLoaded',uno);
     
 }
