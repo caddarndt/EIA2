@@ -108,7 +108,7 @@ function buildNormalCard(i: number): void {
         s.position = "absolute";
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
-        s.height = 120 + "px";
+        s.height = 140 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
@@ -132,7 +132,7 @@ function buildSpecialCard(i: number): void {
         s.position = "absolute";
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
-        s.height = 120 + "px";
+        s.height = 140 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
@@ -153,7 +153,7 @@ function buildBlackCard(i: number): void {
         s.position = "absolute";
         s.backgroundColor = "#000000";
         s.width = 90 + "px";
-        s.height = 120 + "px";
+        s.height = 140 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
