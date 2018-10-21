@@ -10,6 +10,8 @@ Er wurde nicht kopiert und auch nicht diktiert.
 */
         
 
+/* Interface Karten */    
+    
 interface Cards {
     red: string;
     yellow: string;
@@ -52,7 +54,10 @@ let names: Cards = {
     missturn: "Aussetzen",
     choosec: "Farbwahl",
     take4andc: "Nimm 4 und Farbwahl",
-}    
+}   
+    
+    
+/* Arrays für die verschiedenen Karten, plus random funktion um zufälliges Objekt auszuwählen */    
     
 let colorsarray = [names.red, names.yellow, names.green, names.blue];
 let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)];
@@ -66,6 +71,8 @@ let rands = specialarray[Math.floor(Math.random() * specialarray.length)];
 let blackcarray = [names.choosec, names.take4andc];
 let randb = blackcarray[Math.floor(Math.random() * blackcarray.length)];
   
+   
+/* Hauptfunktion */    
     
 function uno(): void {
         let p: number;
@@ -80,12 +87,14 @@ function uno(): void {
                  case 2:
                    buildSpecialCard(randc, rands, p);
                  case 3:
-                   /* buildBlackCard(); */
+                   buildBlackCard(randb, p); 
             }
         }
 }
 
 
+/* Funktionen zum Bau der Karten */    
+    
 function buildNormalCard(randc: string, randn: string, p: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
