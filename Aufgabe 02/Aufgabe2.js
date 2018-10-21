@@ -38,13 +38,13 @@ var Aufgabe2;
         for (let i = 0; i < p; i++) {
             switch (Math.floor(Math.random() * 3)) {
                 case 0:
-                    buildNormalCard(randc, randn, p);
+                    buildNormalCard(randc, randn, i);
                     break;
                 case 1:
-                    buildSpecialCard(randc, rands, p);
+                    buildSpecialCard(randc, rands, i);
                     break;
                 case 2:
-                    buildBlackCard(randb, p);
+                    buildBlackCard(randb, i);
                     break;
             }
         }
