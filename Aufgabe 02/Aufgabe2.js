@@ -23,10 +23,7 @@ var Aufgabe2;
     };
     /* Arrays f�r die verschiedenen Karten, plus random funktion um zuf�lliges Objekt auszuw�hlen */
     let colorsarray = [names.red, names.yellow, names.green, names.blue];
-    function randc(colorsarray) {
-        colorsarray[Math.floor(Math.random() * colorsarray.length)];
-        return randc;
-    }
+    /* let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)]; */
     let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine];
     let randn = namesarray[Math.floor(Math.random() * namesarray.length)];
     let specialarray = [names.take2, names.reverse, names.missturn];
@@ -41,10 +38,10 @@ var Aufgabe2;
         for (let i = 0; i < p; i++) {
             switch (Math.floor(Math.random() * 3)) {
                 case 0:
-                    buildNormalCard(randc, randn, i);
+                    buildNormalCard(randn, i);
                     break;
                 case 1:
-                    buildSpecialCard(randc, rands, i);
+                    buildSpecialCard(rands, i);
                     break;
                 case 2:
                     buildBlackCard(randb, i);
@@ -53,7 +50,7 @@ var Aufgabe2;
         }
     }
     /* Funktionen zum Bau der Karten */
-    function buildNormalCard(randc, randn, i) {
+    function buildNormalCard(/*randc: string*/ randn, i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + i);
@@ -62,7 +59,8 @@ var Aufgabe2;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        s.backgroundColor = randc;
+        /* s.backgroundColor = randc; */
+        s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
@@ -70,7 +68,7 @@ var Aufgabe2;
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
-    function buildSpecialCard(randc, rands, i) {
+    function buildSpecialCard(/*randc: string*/ rands, i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + i);
@@ -79,7 +77,8 @@ var Aufgabe2;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        s.backgroundColor = randc;
+        /*s.backgroundColor = randc;*/
+        s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";

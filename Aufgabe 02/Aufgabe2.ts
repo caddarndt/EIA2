@@ -60,12 +60,8 @@ let names: Cards = {
 /* Arrays für die verschiedenen Karten, plus random funktion um zufälliges Objekt auszuwählen */    
     
 let colorsarray = [names.red, names.yellow, names.green, names.blue];
-function randc(colorsarray: string[]) {
-     colorsarray[Math.floor(Math.random() * colorsarray.length)]
-    
-    return randc
-}
-    
+/* let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)]; */
+
 let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine]; 
 let randn = namesarray[Math.floor(Math.random() * namesarray.length)]; 
 
@@ -87,10 +83,10 @@ function uno(): void {
             
             switch (Math.floor(Math.random()*3)) {
                  case 0:
-                   buildNormalCard(randc, randn, i);
+                   buildNormalCard(randn, i);
                     break;
                  case 1:
-                   buildSpecialCard(randc, rands, i);
+                   buildSpecialCard(rands, i);
                     break;
                  case 2:
                    buildBlackCard(randb, i); 
@@ -102,7 +98,7 @@ function uno(): void {
 
 /* Funktionen zum Bau der Karten */    
     
-function buildNormalCard(randc: any, randn: string, i: number): void {
+function buildNormalCard(/*randc: string*/ randn: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
@@ -113,17 +109,21 @@ function buildNormalCard(randc: any, randn: string, i: number): void {
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        s.backgroundColor = randc;
+        /* s.backgroundColor = randc; */
+        s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
-        s.color = "white";    
+        s.color = "white";
+    
+    
+    
 }
     
 
-function buildSpecialCard(randc: any, rands: string, i: number): void {
+function buildSpecialCard(/*randc: string*/ rands: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
@@ -134,7 +134,8 @@ function buildSpecialCard(randc: any, rands: string, i: number): void {
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        s.backgroundColor = randc;
+        /*s.backgroundColor = randc;*/
+        s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
