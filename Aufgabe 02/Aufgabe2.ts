@@ -12,6 +12,8 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 /* Interface Karten */    
     
+function uno() {
+    
 interface Cards {
     red: string;
     yellow: string;
@@ -71,7 +73,7 @@ let blackcarray = [names.choosec, names.take4andc];
    
 /* Hauptfunktion */    
     
-function uno(): void {
+function game(): void {
         let p: number;
         let a: string = prompt("Mit wie vielen Karten willst du spielen?");
         p = Number(a);
@@ -204,6 +206,7 @@ function Aufnahmestapel() {
 Ablagestapel(); 
 Aufnahmestapel();   
      
+}   
     document.addEventListener('DOMContentLoaded',uno);
     
 }
