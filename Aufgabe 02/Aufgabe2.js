@@ -16,7 +16,7 @@ var Aufgabe2;
         eight: "8",
         nine: "9",
         take2: "Nimm 2",
-        reverse: "Richtungswechsel",
+        reverse: "Reverse",
         missturn: "Aussetzen",
         choosec: "Farbwahl",
         take4andc: "Nimm 4 und Farbwahl",
