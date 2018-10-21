@@ -63,7 +63,7 @@ var Aufgabe2;
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
-        s.left = (i + 0.5) * 140 + "px";
+        s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
@@ -80,7 +80,7 @@ var Aufgabe2;
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
-        s.left = (i + 0.5) * 140 + "px";
+        s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
@@ -97,7 +97,7 @@ var Aufgabe2;
         s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
-        s.left = (i + 0.5) * 140 + "px";
+        s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
