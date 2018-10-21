@@ -23,7 +23,10 @@ var Aufgabe2;
     };
     /* Arrays f�r die verschiedenen Karten, plus random funktion um zuf�lliges Objekt auszuw�hlen */
     let colorsarray = [names.red, names.yellow, names.green, names.blue];
-    let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)];
+    function randc(colorsarray) {
+        colorsarray[Math.floor(Math.random() * colorsarray.length)];
+        return randc;
+    }
     let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine];
     let randn = namesarray[Math.floor(Math.random() * namesarray.length)];
     let specialarray = [names.take2, names.reverse, names.missturn];

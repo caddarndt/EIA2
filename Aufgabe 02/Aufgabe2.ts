@@ -60,8 +60,12 @@ let names: Cards = {
 /* Arrays für die verschiedenen Karten, plus random funktion um zufälliges Objekt auszuwählen */    
     
 let colorsarray = [names.red, names.yellow, names.green, names.blue];
-let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)];
-
+function randc(colorsarray: string[]) {
+     colorsarray[Math.floor(Math.random() * colorsarray.length)]
+    
+    return randc
+}
+    
 let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine]; 
 let randn = namesarray[Math.floor(Math.random() * namesarray.length)]; 
 
@@ -98,7 +102,7 @@ function uno(): void {
 
 /* Funktionen zum Bau der Karten */    
     
-function buildNormalCard(randc: string, randn: string, i: number): void {
+function buildNormalCard(randc: any, randn: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
@@ -115,12 +119,11 @@ function buildNormalCard(randc: string, randn: string, i: number): void {
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
-        s.color = "white";
-    
+        s.color = "white";    
 }
     
 
-function buildSpecialCard(randc: string, rands: string, i: number): void {
+function buildSpecialCard(randc: any, rands: string, i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
