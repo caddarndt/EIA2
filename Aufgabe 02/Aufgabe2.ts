@@ -63,12 +63,10 @@ let colorsarray = [names.red, names.yellow, names.green, names.blue];
 
 let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine]; 
 
-
 let specialarray = [names.take2, names.reverse, names.missturn];
-let rands = specialarray[Math.floor(Math.random() * specialarray.length)];
 
 let blackcarray = [names.choosec, names.take4andc];
-let randb = blackcarray[Math.floor(Math.random() * blackcarray.length)];
+
   
    
 /* Hauptfunktion */    
