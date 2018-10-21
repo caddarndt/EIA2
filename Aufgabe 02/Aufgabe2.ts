@@ -168,7 +168,7 @@ function Ablagestapel() {
         document.body.appendChild(div);
             
         div.setAttribute("id", "Ablagestapel");
-        document.getElementById("Ablagestapel").innerHTML += "Ablage- stapel";
+        document.getElementById("Ablagestapel").innerHTML += "Ablagestapel";
             
         let s = div.style;
         s.border = "thin solid black";
@@ -188,7 +188,7 @@ function Aufnahmestapel() {
         document.body.appendChild(div);
             
         div.setAttribute("id", "Aufnahmestapel");
-        document.getElementById("Aufnahmestapel").innerHTML += "Aufnahmestapel";
+        document.getElementById("Aufnahmestapel").innerHTML += "Aufnahme- stapel";
             
         let s = div.style;
         s.border = "thin solid black";
