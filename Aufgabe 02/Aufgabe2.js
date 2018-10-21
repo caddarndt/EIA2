@@ -23,9 +23,7 @@ var Aufgabe2;
     };
     /* Arrays f�r die verschiedenen Karten, plus random funktion um zuf�lliges Objekt auszuw�hlen */
     let colorsarray = [names.red, names.yellow, names.green, names.blue];
-    /* let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)]; */
     let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine];
-    let randn = namesarray[Math.floor(Math.random() * namesarray.length)];
     let specialarray = [names.take2, names.reverse, names.missturn];
     let rands = specialarray[Math.floor(Math.random() * specialarray.length)];
     let blackcarray = [names.choosec, names.take4andc];
@@ -38,28 +36,27 @@ var Aufgabe2;
         for (let i = 0; i < p; i++) {
             switch (Math.floor(Math.random() * 3)) {
                 case 0:
-                    buildNormalCard(randn, i);
+                    buildNormalCard(i);
                     break;
                 case 1:
-                    buildSpecialCard(rands, i);
+                    buildSpecialCard(i);
                     break;
                 case 2:
-                    buildBlackCard(randb, i);
+                    buildBlackCard(i);
                     break;
             }
         }
     }
     /* Funktionen zum Bau der Karten */
-    function buildNormalCard(/*randc: string*/ randn, i) {
+    function buildNormalCard(i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + i);
-        document.getElementById("a" + i).innerHTML += randn;
+        document.getElementById("a" + i).innerHTML += namesarray[Math.floor(Math.random() * namesarray.length)];
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        /* s.backgroundColor = randc; */
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
@@ -68,16 +65,15 @@ var Aufgabe2;
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
-    function buildSpecialCard(/*randc: string*/ rands, i) {
+    function buildSpecialCard(i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + i);
-        document.getElementById("a" + i).innerHTML += rands;
+        document.getElementById("a" + i).innerHTML += specialarray[Math.floor(Math.random() * specialarray.length)];
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        /*s.backgroundColor = randc;*/
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
@@ -86,11 +82,11 @@ var Aufgabe2;
         s.borderRadius = 5 + "px";
         s.color = "white";
     }
-    function buildBlackCard(randb, i) {
+    function buildBlackCard(i) {
         let div = document.createElement("div");
         document.body.appendChild(div);
         div.setAttribute("id", "a" + i);
-        document.getElementById("a" + i).innerHTML += randb;
+        document.getElementById("a" + i).innerHTML += blackcarray[Math.floor(Math.random() * blackcarray.length)];
         let s = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";

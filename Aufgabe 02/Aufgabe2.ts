@@ -60,10 +60,9 @@ let names: Cards = {
 /* Arrays für die verschiedenen Karten, plus random funktion um zufälliges Objekt auszuwählen */    
     
 let colorsarray = [names.red, names.yellow, names.green, names.blue];
-/* let randc = colorsarray[Math.floor(Math.random() * colorsarray.length)]; */
 
 let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine]; 
-let randn = namesarray[Math.floor(Math.random() * namesarray.length)]; 
+
 
 let specialarray = [names.take2, names.reverse, names.missturn];
 let rands = specialarray[Math.floor(Math.random() * specialarray.length)];
@@ -83,13 +82,13 @@ function uno(): void {
             
             switch (Math.floor(Math.random()*3)) {
                  case 0:
-                   buildNormalCard(randn, i);
+                   buildNormalCard(i);
                     break;
                  case 1:
-                   buildSpecialCard(rands, i);
+                   buildSpecialCard(i);
                     break;
                  case 2:
-                   buildBlackCard(randb, i); 
+                   buildBlackCard(i); 
                     break;
             }
         }
@@ -98,18 +97,17 @@ function uno(): void {
 
 /* Funktionen zum Bau der Karten */    
     
-function buildNormalCard(/*randc: string*/ randn: string, i: number): void {
+function buildNormalCard(i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
         div.setAttribute("id", "a" + i)
-        document.getElementById("a" + i).innerHTML += randn;    
+        document.getElementById("a" + i).innerHTML += namesarray[Math.floor(Math.random() * namesarray.length)];     
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        /* s.backgroundColor = randc; */
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
@@ -123,18 +121,17 @@ function buildNormalCard(/*randc: string*/ randn: string, i: number): void {
 }
     
 
-function buildSpecialCard(/*randc: string*/ rands: string, i: number): void {
+function buildSpecialCard(i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
         div.setAttribute("id", "a" + i)
-        document.getElementById("a" + i).innerHTML += rands;    
+        document.getElementById("a" + i).innerHTML += specialarray[Math.floor(Math.random() * specialarray.length)];    
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
         s.textAlign = "center";
         s.position = "absolute";
-        /*s.backgroundColor = randc;*/
         s.backgroundColor = colorsarray[Math.floor(Math.random() * colorsarray.length)];
         s.width = 90 + "px";
         s.height = 120 + "px";
@@ -145,12 +142,12 @@ function buildSpecialCard(/*randc: string*/ rands: string, i: number): void {
     
 }
     
-function buildBlackCard(randb: string, i: number): void {
+function buildBlackCard(i: number): void {
         let div: HTMLDivElement = document.createElement("div");
         document.body.appendChild(div);
 
         div.setAttribute("id", "a" + i)
-        document.getElementById("a" + i).innerHTML += randb;    
+        document.getElementById("a" + i).innerHTML += blackcarray[Math.floor(Math.random() * blackcarray.length)];    
     
         let s: CSSStyleDeclaration = div.style;
         s.border = "thin solid black";
