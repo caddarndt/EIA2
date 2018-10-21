@@ -84,10 +84,13 @@ function uno(): void {
             switch (Math.floor(Math.random()*3)+1) {
                  case 1:
                    buildNormalCard(randc, randn, p);
+                    break;
                  case 2:
                    buildSpecialCard(randc, rands, p);
+                    break;
                  case 3:
                    buildBlackCard(randb, p); 
+                    break;
             }
         }
 }
