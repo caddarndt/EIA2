@@ -110,7 +110,7 @@ function buildNormalCard(randc: string, randn: string, i: number): void {
         s.textAlign = "center";
         s.position = "absolute";
         s.backgroundColor = randc;
-        s.width = 70 + "px";
+        s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 140 + "px";
@@ -132,7 +132,7 @@ function buildSpecialCard(randc: string, rands: string, i: number): void {
         s.textAlign = "center";
         s.position = "absolute";
         s.backgroundColor = randc;
-        s.width = 70 + "px";
+        s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 140 + "px";
@@ -153,7 +153,7 @@ function buildBlackCard(randb: string, i: number): void {
         s.textAlign = "center";
         s.position = "absolute";
         s.backgroundColor = "#000000";
-        s.width = 70 + "px";
+        s.width = 90 + "px";
         s.height = 120 + "px";
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 140 + "px";
