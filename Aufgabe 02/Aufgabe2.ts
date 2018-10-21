@@ -168,7 +168,7 @@ function Ablagestapel() {
         document.body.appendChild(div);
             
         div.setAttribute("id", "Ablagestapel");
-        document.getElementById("Ablagestapel").innerHTML += "Ablagestapel";
+        document.getElementById("Ablagestapel").innerHTML += "Ablage- stapel";
             
         let s = div.style;
         s.border = "thin solid black";
