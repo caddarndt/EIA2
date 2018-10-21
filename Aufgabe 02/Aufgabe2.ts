@@ -112,7 +112,7 @@ function buildNormalCard(i: number): void {
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
-        s.color = "white";
+        s.color = "black";
     
     
     
@@ -136,7 +136,7 @@ function buildSpecialCard(i: number): void {
         s.bottom = 40 + "px";
         s.left = (i + 0.5) * 100 + "px";
         s.borderRadius = 5 + "px";
-        s.color = "white";
+        s.color = "black";
     
 }
     
@@ -159,6 +159,50 @@ function buildBlackCard(i: number): void {
         s.borderRadius = 5 + "px";
         s.color = "white";
 }    
+    
+
+function Ablagestapel() { 
+        let div = document.createElement("div");
+        document.body.appendChild(div);
+            
+        div.setAttribute("id", "Ablagestapel");
+        document.getElementById("Ablagestapel").innerHTML += "Ablagestapel";
+            
+        let s = div.style;
+        s.border = "thin solid black";
+        s.textAlign = "center";
+        s.position = "absolute";
+        s.backgroundColor = "white";
+        s.width = 90 + "px";
+        s.height = 140 + "px";
+        s.left = 50 + "px";
+        s.top = 20 + "px";
+        s.borderRadius = 5 + "px";
+        s.color = "black";
+}
+
+function Aufnahmestapel() { 
+        let div = document.createElement("div");
+        document.body.appendChild(div);
+            
+        div.setAttribute("id", "Aufnahmestapel");
+        document.getElementById("Aufnahmestapel").innerHTML += "Aufnahmestapel";
+            
+        let s = div.style;
+        s.border = "thin solid black";
+        s.textAlign = "center";
+        s.position = "absolute";
+        s.backgroundColor = "black";
+        s.width = 90 + "px";
+        s.height = 140 + "px";
+        s.right = 50 + "px";
+        s.top = 20 + "px";
+        s.borderRadius = 5 + "px";
+        s.color = "white";
+}
+
+Ablagestapel(); 
+Aufnahmestapel();   
      
     document.addEventListener('DOMContentLoaded',uno);
     
