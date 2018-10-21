@@ -36,14 +36,14 @@ var Aufgabe2;
         let a = prompt("Mit wie vielen Karten willst du spielen?");
         p = Number(a);
         for (let i = 0; i < p; i++) {
-            switch (Math.floor(Math.random() * 3) + 1) {
-                case 1:
+            switch (Math.floor(Math.random() * 3)) {
+                case 0:
                     buildNormalCard(randc, randn, p);
                     break;
-                case 2:
+                case 1:
                     buildSpecialCard(randc, rands, p);
                     break;
-                case 3:
+                case 2:
                     buildBlackCard(randb, p);
                     break;
             }
