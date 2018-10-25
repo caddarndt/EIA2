@@ -31,7 +31,7 @@ var Aufgabe2;
             choosec: "Farbwahl",
             take4andc: "Nimm 4 und Farbwahl",
         };
-        /* Arrays f�r die verschiedenen Karten, plus random funktion um zuf�lliges Objekt auszuw�hlen */
+        /* Arrays f�r die verschiedenen Karten */
         let colorsarray = [names.red, names.yellow, names.green, names.blue];
         let namesarray = [names.zero, names.one, names.two, names.three, names.four, names.five, names.six, names.seven, names.eight, names.nine];
         let specialarray = [names.take2, names.reverse, names.missturn];

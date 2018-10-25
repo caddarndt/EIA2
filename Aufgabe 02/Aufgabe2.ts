@@ -59,7 +59,7 @@ let names: Cards = {
 }   
     
     
-/* Arrays für die verschiedenen Karten, plus random funktion um zufälliges Objekt auszuwählen */    
+/* Arrays für die verschiedenen Karten */    
     
 let colorsarray = [names.red, names.yellow, names.green, names.blue];
 
