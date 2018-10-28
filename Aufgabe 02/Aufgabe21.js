@@ -448,8 +448,8 @@ var Aufgabe2besser;
         let cards;
         let p = prompt("Mit wie vielen Karten willst du spielen?");
         cards = Number(p);
-        if (cards > 15) {
-            cards = 15;
+        if (cards > 10) {
+            cards = 10;
         }
         for (let i = 0; i < cards; i++) {
             let randomCard = random(deck.length);

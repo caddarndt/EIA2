@@ -583,7 +583,7 @@ let deck = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r1
         let cards: number;
         let p: string = prompt("Mit wie vielen Karten willst du spielen?");
         cards = Number(p);
-        if (cards > 15) { cards = 15; } 
+        if (cards > 10) { cards = 10; } 
 
         for (let i: number = 0; i < cards; i++) {
 
