@@ -8,7 +8,10 @@ Datum: 20.10.2018
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert.
 */
-        
+
+function uno() {    
+    
+    
  let deck: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rR", "rR", "rA", "rA", "r+2", "r+2",
         "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gR", "gR", "gA", "gA", "g+2", "g+2",
         "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bA", "bA", "b+2", "b+2",
@@ -109,7 +112,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 Ablagestapel(); 
 Aufnahmestapel();   
      
-    
-    document.addEventListener("DOMContentLoaded", (main));
+}   
+    document.addEventListener("DOMContentLoaded", (uno));
     
 }
