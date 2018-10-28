@@ -468,6 +468,15 @@ var Aufgabe2besser;
         document.getElementById("a" + _n).innerHTML += _x;
         let s = div.style;
         s.backgroundColor = _color;
+        s.border = "thin solid black";
+        s.textAlign = "center";
+        s.position = "absolute";
+        s.width = 90 + "px";
+        s.height = 140 + "px";
+        s.right = 50 + "px";
+        s.top = 20 + "px";
+        s.borderRadius = 5 + "px";
+        s.color = "white";
         s.left = (_n + 1) * 100 + "px";
         s.right = (_n + 1) * 100 + "px";
     }

@@ -602,6 +602,15 @@ let deck = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r1
         document.getElementById("a" + _n).innerHTML += _x;
         let s: CSSStyleDeclaration = div.style;
         s.backgroundColor = _color;
+        s.border = "thin solid black";
+        s.textAlign = "center";
+        s.position = "absolute";
+        s.width = 90 + "px";
+        s.height = 140 + "px";
+        s.right = 50 + "px";
+        s.top = 20 + "px";
+        s.borderRadius = 5 + "px";
+        s.color = "white";
         s.left = (_n + 1) * 100 + "px";
         s.right = (_n + 1) * 100 + "px";
     }    
