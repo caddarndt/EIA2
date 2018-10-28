@@ -89,6 +89,6 @@ var Aufgabe2besser;
         Ablagestapel();
         Aufnahmestapel();
     }
-    document.addEventListener("DOMContentLoaded", (uno, main));
+    document.addEventListener("DOMContentLoaded", (uno));
 })(Aufgabe2besser || (Aufgabe2besser = {}));
 //# sourceMappingURL=Aufgabe21.js.map

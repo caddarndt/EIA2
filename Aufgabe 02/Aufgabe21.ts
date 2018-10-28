@@ -113,6 +113,6 @@ Ablagestapel();
 Aufnahmestapel();   
      
 }   
-    document.addEventListener("DOMContentLoaded", (uno, main));
+    document.addEventListener("DOMContentLoaded", (uno));
     
 }
