@@ -14,32 +14,30 @@ var Aufgabe2besser;
             "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bA", "bA", "b+2", "b+2",
             "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yR", "yR", "yA", "yA", "y+2", "y+2",
             "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
-        function main() {
-            let p;
-            let Cards = prompt("Mit wie vielen Karten willst du spielen?");
-            p = Number(Cards);
-            for (let i = 0; i < p; i++) {
-                let random = Math.floor(Math.random() * deck.length) + 1;
-                let color = deck[random].substr(0, 1);
-                if (color == "r") {
-                    color = "#ff0c0c";
-                }
-                if (color == "g") {
-                    color = "#4c0cff";
-                }
-                if (color == "b") {
-                    color = "#26f70e";
-                }
-                if (color == "y") {
-                    color = "#fbff23";
-                }
-                if (color == "s") {
-                    color = "#000000";
-                }
-                let value = deck[random].substr(1);
-                buildCards(color, value, i);
-                deck.splice(random, 1);
+        let p;
+        let Cards = prompt("Mit wie vielen Karten willst du spielen?");
+        p = Number(Cards);
+        for (let i = 0; i < p; i++) {
+            let random = Math.floor(Math.random() * deck.length) + 1;
+            let color = deck[random].substr(0, 1);
+            if (color == "r") {
+                color = "#ff0c0c";
             }
+            if (color == "g") {
+                color = "#4c0cff";
+            }
+            if (color == "b") {
+                color = "#26f70e";
+            }
+            if (color == "y") {
+                color = "#fbff23";
+            }
+            if (color == "s") {
+                color = "#000000";
+            }
+            let value = deck[random].substr(1);
+            buildCards(color, value, i);
+            deck.splice(random, 1);
             function buildCards(_color, _n, _i) {
                 let div = document.createElement("div");
                 document.body.appendChild(div);
