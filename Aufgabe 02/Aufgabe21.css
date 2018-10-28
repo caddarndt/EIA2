@@ -9,32 +9,6 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 @charset "ISO-8859-1";
 
-#AbSt {
-        border = thin solid black;
-        textAlign = center;
-        position = absolute;
-        backgroundColor = white;
-        width = 90px;
-        height = 140px;
-        left = 50px;
-        top = 20px;
-        borderRadius = 5px;
-        color = black;	
-}
-
-
-#AuSt {
-		border = thin solid black;
-        textAlign = center;
-        position = absolute;
-        backgroundColor = black;
-        width = 90px;
-        height = 140px;
-        right = 50px;
-        top = 20px;
-        borderRadius = 5px;
-        color = white;	
-}
 
 .hand {
 		border = thin solid black;
