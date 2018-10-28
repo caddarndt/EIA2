@@ -7,6 +7,8 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
 */
 
+@charset "ISO-8859-1";
+
 #AbSt {
         border = thin solid black;
         textAlign = center;
