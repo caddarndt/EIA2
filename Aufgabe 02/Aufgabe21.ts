@@ -576,6 +576,7 @@ let deck = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11, r12, r13, r14, r15, r1
             y1, y2, y3, y4, y5, y6, y7, y8, y9, y10, y11, y12, y13, y14, y15, y16, y17, y18, y19, y20, y21, y22, y23, y24, y25,
             bb1, bb2, bb3, bb4, bb5, bb6, bb7, bb8];
 
+
 /* Hauptfunktion */
     
  function main(): void {

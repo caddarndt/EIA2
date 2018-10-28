@@ -9,14 +9,27 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 @charset "ISO-8859-1";
 
-
-.hand {
-		border = thin solid black;
+#AbSt { 
+        border = thin solid black;
         textAlign = center;
         position = absolute;
+        backgroundColor = white;
         width = 90px;
         height = 140px;
-        bottom = 40px;
-        left = 100px;
+        left = 50px;
+        top = 20px;
         borderRadius = 5px;
+        color = black;
 }
+
+#AuSt {
+        border = "thin solid black";
+        textAlign = "center";
+        position = "absolute";
+        backgroundColor = "black";
+        width = 90 + "px";
+        height = 140 + "px";
+        right = 50 + "px";
+        top = 20 + "px";
+        borderRadius = 5 + "px";
+        color = "white";
