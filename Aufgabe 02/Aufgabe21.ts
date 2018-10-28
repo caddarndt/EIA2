@@ -19,6 +19,7 @@ function uno() {
         "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
    
     
+    function main(): void {
         let p: number;
         let Cards: string = prompt("Mit wie vielen Karten willst du spielen?");
         p = Number(Cards);
@@ -48,7 +49,7 @@ function uno() {
             
             buildCards(color, value, i);
             deck.splice(random, 1);
-        
+        }
 
         function buildCards(_color: string, _n: string, _i: number): void {
 
@@ -112,6 +113,6 @@ Ablagestapel();
 Aufnahmestapel();   
      
 }   
-    document.addEventListener("DOMContentLoaded", (uno));
+    document.addEventListener("DOMContentLoaded", (uno, main));
     
 }
