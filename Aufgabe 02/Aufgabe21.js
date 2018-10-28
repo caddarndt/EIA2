@@ -1,307 +1,56 @@
 var Aufgabe2besser;
 (function (Aufgabe2besser) {
-    /* Rote Karten */
-    let r1 = {
-        color: "red",
-        value: "0",
-    };
-    let r2 = {
-        color: "red",
-        value: "1",
-    };
-    let r3 = {
-        color: "red",
-        value: "2",
-    };
-    let r4 = {
-        color: "red",
-        value: "3",
-    };
-    let r5 = {
-        color: "red",
-        value: "4",
-    };
-    let r6 = {
-        color: "red",
-        value: "5",
-    };
-    let r7 = {
-        color: "red",
-        value: "6",
-    };
-    let r8 = {
-        color: "red",
-        value: "7",
-    };
-    let r9 = {
-        color: "red",
-        value: "8",
-    };
-    let r10 = {
-        color: "red",
-        value: "9",
-    };
-    let r11 = {
-        color: "red",
-        value: "take2"
-    };
-    let r12 = {
-        color: "red",
-        value: "reverse",
-    };
-    let r13 = {
-        color: "red",
-        value: "missturn",
-    };
-    let r14 = {
-        color: "red",
-        value: "1",
-    };
-    let r15 = {
-        color: "red",
-        value: "2",
-    };
-    let r16 = {
-        color: "red",
-        value: "3",
-    };
-    let r17 = {
-        color: "red",
-        value: "4",
-    };
-    let r18 = {
-        color: "red",
-        value: "5",
-    };
-    let r19 = {
-        color: "red",
-        value: "6",
-    };
-    let r20 = {
-        color: "red",
-        value: "7",
-    };
-    let r21 = {
-        color: "red",
-        value: "8",
-    };
-    let r22 = {
-        color: "red",
-        value: "9",
-    };
-    let r23 = {
-        color: "red",
-        value: "take2"
-    };
-    let r24 = {
-        color: "red",
-        value: "reverse",
-    };
-    let r25 = {
-        color: "red",
-        value: "missturn",
-    };
-    /* Gr�ne Karten */
-    let g1 = {
-        color: "blue",
-        value: "0",
-    };
-    let g2 = {
-        color: "blue",
-        value: "1",
-    };
-    let g3 = {
-        color: "blue",
-        value: "2",
-    };
-    let g4 = {
-        color: "blue",
-        value: "3",
-    };
-    let g5 = {
-        color: "blue",
-        value: "4",
-    };
-    let g6 = {
-        color: "blue",
-        value: "5",
-    };
-    let g7 = {
-        color: "blue",
-        value: "6",
-    };
-    let g8 = {
-        color: "blue",
-        value: "7",
-    };
-    let g9 = {
-        color: "blue",
-        value: "8",
-    };
-    let g10 = {
-        color: "blue",
-        value: "9",
-    };
-    let g11 = {
-        color: "blue",
-        value: "take2"
-    };
-    let g12 = {
-        color: "blue",
-        value: "reverse",
-    };
-    let g13 = {
-        color: "blue",
-        value: "missturn",
-    };
-    let g14 = {
-        color: "blue",
-        value: "1",
-    };
-    let g15 = {
-        color: "blue",
-        value: "2",
-    };
-    let g16 = {
-        color: "blue",
-        value: "3",
-    };
-    let g17 = {
-        color: "blue",
-        value: "4",
-    };
-    let g18 = {
-        color: "blue",
-        value: "5",
-    };
-    let g19 = {
-        color: "blue",
-        value: "6",
-    };
-    let g20 = {
-        color: "blue",
-        value: "7",
-    };
-    let g21 = {
-        color: "blue",
-        value: "8",
-    };
-    let g22 = {
-        color: "blue",
-        value: "9",
-    };
-    let g23 = {
-        color: "blue",
-        value: "take2"
-    };
-    let g24 = {
-        color: "blue",
-        value: "reverse",
-    };
-    let g25 = {
-        color: "blue",
-        value: "missturn",
-    };
-    /* Blaue Karten */
-    let b1 = {
-        color: "blue",
-        value: "0",
-    };
-    let b2 = {
-        color: "blue",
-        value: "1",
-    };
-    let b3 = {
-        color: "blue",
-        value: "2",
-    };
-    let b4 = {
-        color: "blue",
-        value: "3",
-    };
-    let b5 = {
-        color: "blue",
-        value: "4",
-    };
-    let b6 = {
-        color: "blue",
-        value: "5",
-    };
-    let b7 = {
-        color: "blue",
-        value: "6",
-    };
-    let b8 = {
-        color: "blue",
-        value: "7",
-    };
-    let b9 = {
-        color: "blue",
-        value: "8",
-    };
-    let b10 = {
-        color: "blue",
-        value: "9",
-    };
-    let b11 = {
-        color: "blue",
-        value: "take2"
-    };
-    let b12 = {
-        color: "blue",
-        value: "reverse",
-    };
-    let b13 = {
-        color: "blue",
-        value: "missturn",
-    };
-    let b14 = {
-        color: "blue",
-        value: "1",
-    };
-    let b15 = {
-        color: "blue",
-        value: "2",
-    };
-    let b16 = {
-        color: "blue",
-        value: "3",
-    };
-    let b17 = {
-        color: "blue",
-        value: "4",
-    };
-    let b18 = {
-        color: "blue",
-        value: "5",
-    };
-    let b19 = {
-        color: "blue",
-        value: "6",
-    };
-    let b20 = {
-        color: "blue",
-        value: "7",
-    };
-    let b21 = {
-        color: "blue",
-        value: "8",
-    };
-    let b22 = {
-        color: "blue",
-        value: "9",
-    };
-    let b23 = {
-        color: "blue",
-        value: "take2"
-    };
-    let b24 = {
-        color: "blue",
-        value: "reverse",
-    };
-    let b25 = {
-        color: "blue",
-        value: "missturn",
-    };
+    /*
+    Aufgabe: Aufgabe 2
+    Name: Catherina Arndt
+    Matrikel: 259418
+    Datum: 20.10.2018
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
+    Er wurde nicht kopiert und auch nicht diktiert.
+    */
+    let deck = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rR", "rR", "rA", "rA", "r+2", "r+2",
+        "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gR", "gR", "gA", "gA", "g+2", "g+2",
+        "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bA", "bA", "b+2", "b+2",
+        "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yR", "yR", "yA", "yA", "y+2", "y+2",
+        "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
+    function main() {
+        let p;
+        let Cards = prompt("Mit wie vielen Karten willst du spielen?");
+        p = Number(Cards);
+        for (let i = 0; i < p; i++) {
+            let random = Math.floor(Math.random() * deck.length) + 1;
+            let color = deck[random].substr(0, 1);
+            if (color == "r") {
+                color = "#ff0c0c";
+            }
+            if (color == "g") {
+                color = "#4c0cff";
+            }
+            if (color == "b") {
+                color = "#26f70e";
+            }
+            if (color == "y") {
+                color = "#fbff23";
+            }
+            if (color == "s") {
+                color = "#000000";
+            }
+            let value = deck[random].substr(1);
+            buildCards(color, value, i);
+            deck.splice(random, 1);
+        }
+        function buildCards(_color, _n, _i) {
+            let div = document.createElement("div");
+            document.body.appendChild(div);
+            div.setAttribute("class", "hand");
+            document.getElementById("a" + _i).innerHTML += _n;
+            let s = div.style;
+            s.backgroundColor = _color;
+            if (_color == "#000000" || _color == "#26f70e") {
+                s.color = "white";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", (main));
 })(Aufgabe2besser || (Aufgabe2besser = {}));
 //# sourceMappingURL=Aufgabe21.js.map

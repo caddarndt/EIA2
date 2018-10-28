@@ -1,4 +1,5 @@
 namespace Aufgabe2besser {
+
 /*
 Aufgabe: Aufgabe 2
 Name: Catherina Arndt
@@ -8,392 +9,61 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
 */
         
-interface Cards {
-    color: string
-    value: string
-}
-  
-/* Rote Karten */
-    
-let r1: Cards = {
-    color: "red",
-    value: "0",
-}
-    
-let r2: Cards = {
-    color: "red",
-    value: "1",
-}
-
-let r3: Cards = {
-    color: "red",
-    value: "2",
-}
-    
-let r4: Cards = {
-    color: "red",
-    value: "3",
-}
-    
-let r5: Cards = {
-    color: "red",
-    value: "4",
-}
-
-let r6: Cards = {
-    color: "red",
-    value: "5",
-}
-
-let r7: Cards = {
-    color: "red",
-    value: "6",
-}
-    
-let r8: Cards = {
-    color: "red",
-    value: "7",
-}
-
-let r9: Cards = {
-    color: "red",
-    value: "8",
-}
-    
-let r10: Cards = {
-    color: "red", 
-    value: "9",
-}
-    
-let r11: Cards = {
-    color: "red",
-    value: "take2"
-}
-
-let r12: Cards = {
-    color: "red",
-    value: "reverse",
-}    
+ let deck: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rR", "rR", "rA", "rA", "r+2", "r+2",
+        "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gR", "gR", "gA", "gA", "g+2", "g+2",
+        "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bA", "bA", "b+2", "b+2",
+        "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yR", "yR", "yA", "yA", "y+2", "y+2",
+        "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
    
-let r13: Cards = {
-    color: "red",
-    value: "missturn",
-} 
     
-let r14: Cards = {
-    color: "red",
-    value: "1",
-}
+    function main(): void {
+        let p: number;
+        let Cards: string = prompt("Mit wie vielen Karten willst du spielen?");
+        p = Number(Cards);
+       
+        for (let i: number = 0; i < p; i++) {
+            let random: number = Math.floor(Math.random()*deck.length)+1;
 
-let r15: Cards = {
-    color: "red",
-    value: "2",
-}
-    
-let r16: Cards = {
-    color: "red",
-    value: "3",
-}
-    
-let r17: Cards = {
-    color: "red",
-    value: "4",
-}
+            let color: string = deck[random].substr(0, 1);
 
-let r18: Cards = {
-    color: "red",
-    value: "5",
-}
+            if (color == "r") {
+                color = "#ff0c0c";
+            }
+            if (color == "g") {
+                color = "#4c0cff";
+            }
+            if (color == "b") {
+                color = "#26f70e";
+            }
+            if (color == "y") {
+                color = "#fbff23";
+            }
+            if (color == "s") {
+                color = "#000000";
+            }
 
-let r19: Cards = {
-    color: "red",
-    value: "6",
-}
-    
-let r20: Cards = {
-    color: "red",
-    value: "7",
-}
+            let value: string = deck[random].substr(1);
+            
+            buildCards(color, value, i);
+            deck.splice(random, 1);
+        }
 
-let r21: Cards = {
-    color: "red",
-    value: "8",
-}
-    
-let r22: Cards = {
-    color: "red", 
-    value: "9",
-}
-    
-let r23: Cards = {
-    color: "red",
-    value: "take2"
-}
+        function buildCards(_color: string, _n: string, _i: number): void {
 
-let r24: Cards = {
-    color: "red",
-    value: "reverse",
-}    
-   
-let r25: Cards = {
-    color: "red",
-    value: "missturn",
-} 
-  
-    
-/* Grüne Karten */ 
-    
-let g1: Cards = {
-    color: "blue",
-    value: "0",
-}
-    
-let g2: Cards = {
-    color: "blue",
-    value: "1",
-}
+            let div: HTMLDivElement = document.createElement("div");
+            document.body.appendChild(div);
+            
+            div.setAttribute("class", "hand");
+            document.getElementById("a" + _i).innerHTML += _n;
 
-let g3: Cards = {
-    color: "blue",
-    value: "2",
-}
-    
-let g4: Cards = {
-    color: "blue",
-    value: "3",
-}
-    
-let g5: Cards = {
-    color: "blue",
-    value: "4",
-}
+            let s: CSSStyleDeclaration = div.style;
+            s.backgroundColor = _color;
 
-let g6: Cards = {
-    color: "blue",
-    value: "5",
-}
-
-let g7: Cards = {
-    color: "blue",
-    value: "6",
-}
-    
-let g8: Cards = {
-    color: "blue",
-    value: "7",
-}
-
-let g9: Cards = {
-    color: "blue",
-    value: "8",
-}
-    
-let g10: Cards = {
-    color: "blue", 
-    value: "9",
-}
-    
-let g11: Cards = {
-    color: "blue",
-    value: "take2"
-}
-
-let g12: Cards = {
-    color: "blue",
-    value: "reverse",
-}    
-   
-let g13: Cards = {
-    color: "blue",
-    value: "missturn",
-} 
-    
-let g14: Cards = {
-    color: "blue",
-    value: "1",
-}
-
-let g15: Cards = {
-    color: "blue",
-    value: "2",
-}
-    
-let g16: Cards = {
-    color: "blue",
-    value: "3",
-}
-    
-let g17: Cards = {
-    color: "blue",
-    value: "4",
-}
-
-let g18: Cards = {
-    color: "blue",
-    value: "5",
-}
-
-let g19: Cards = {
-    color: "blue",
-    value: "6",
-}
-    
-let g20: Cards = {
-    color: "blue",
-    value: "7",
-}
-
-let g21: Cards = {
-    color: "blue",
-    value: "8",
-}
-    
-let g22: Cards = {
-    color: "blue", 
-    value: "9",
-}
-    
-let g23: Cards = {
-    color: "blue",
-    value: "take2"
-}
-
-let g24: Cards = {
-    color: "blue",
-    value: "reverse",
-}    
-   
-let g25: Cards = {
-    color: "blue",
-    value: "missturn",
-} 
-    
-/* Blaue Karten */
-    
-    
-let b1: Cards = {
-    color: "blue",
-    value: "0",
-}
-    
-let b2: Cards = {
-    color: "blue",
-    value: "1",
-}
-
-let b3: Cards = {
-    color: "blue",
-    value: "2",
-}
-    
-let b4: Cards = {
-    color: "blue",
-    value: "3",
-}
-    
-let b5: Cards = {
-    color: "blue",
-    value: "4",
-}
-
-let b6: Cards = {
-    color: "blue",
-    value: "5",
-}
-
-let b7: Cards = {
-    color: "blue",
-    value: "6",
-}
-    
-let b8: Cards = {
-    color: "blue",
-    value: "7",
-}
-
-let b9: Cards = {
-    color: "blue",
-    value: "8",
-}
-    
-let b10: Cards = {
-    color: "blue", 
-    value: "9",
-}
-    
-let b11: Cards = {
-    color: "blue",
-    value: "take2"
-}
-
-let b12: Cards = {
-    color: "blue",
-    value: "reverse",
-}    
-   
-let b13: Cards = {
-    color: "blue",
-    value: "missturn",
-} 
-    
-let b14: Cards = {
-    color: "blue",
-    value: "1",
-}
-
-let b15: Cards = {
-    color: "blue",
-    value: "2",
-}
-    
-let b16: Cards = {
-    color: "blue",
-    value: "3",
-}
-    
-let b17: Cards = {
-    color: "blue",
-    value: "4",
-}
-
-let b18: Cards = {
-    color: "blue",
-    value: "5",
-}
-
-let b19: Cards = {
-    color: "blue",
-    value: "6",
-}
-    
-let b20: Cards = {
-    color: "blue",
-    value: "7",
-}
-
-let b21: Cards = {
-    color: "blue",
-    value: "8",
-}
-    
-let b22: Cards = {
-    color: "blue", 
-    value: "9",
-}
-    
-let b23: Cards = {
-    color: "blue",
-    value: "take2"
-}
-
-let b24: Cards = {
-    color: "blue",
-    value: "reverse",
-}    
-   
-let b25: Cards = {
-    color: "blue",
-    value: "missturn",
-} 
+            if (_color == "#000000" || _color == "#26f70e") {
+                s.color = "white";
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", (main));
     
 }
