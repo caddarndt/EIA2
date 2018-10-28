@@ -9,6 +9,16 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 @charset "ISO-8859-1";
 
+body > div {
+	border: thin solid black;
+	text-align: center;
+	position: absolute;
+	margin: 200px;
+	float: left;
+	width: 120px;
+	height: 170px;
+	border-radius: 5px;
+
 .AbSt { 
         border = thin solid black;
         text-align = center;
