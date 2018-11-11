@@ -9,7 +9,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 @charset "ISO-8859-1";
 
-div > div {
+div {
 	border: thin solid black;
 	text-Align: center;
 	width: 130px;
