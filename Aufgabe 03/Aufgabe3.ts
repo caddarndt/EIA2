@@ -11,10 +11,10 @@ Er wurde nicht kopiert und auch nicht diktiert.
     
     
 
-let deck: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rR", "rR", "rS", "rS", "r+2", "r+2",
-                      "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gR", "gR", "gS", "gS", "g+2", "g+2",
-                      "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bS", "bS", "b+2", "b+2",
-                      "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yR", "yR", "yS", "yS", "y+2", "y+2",
+let deck: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rReverse", "rReverse", "rStop", "rStop", "r+2", "r+2",
+                      "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gReverse", "gReverse", "gStop", "gStop", "g+2", "g+2",
+                      "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bReverse", "bReverse", "bStop", "bStop", "b+2", "b+2",
+                      "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yReverse", "yReverse", "yStop", "yStop", "y+2", "y+2",
                       "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
 let hand: string[] = [];
 let pile: string[] = [];
@@ -94,7 +94,7 @@ function uno(): void {
         takeListener();
         function takeEvent(): void {
             take(1);
-            setup();
+            discard();
             createCards(hand);
             put();
         }
@@ -117,7 +117,7 @@ function uno(): void {
         sort();
         function clickSort(): void {
             hand.sort();
-            setup();
+            discard();
             createCards(hand);
             put();
         }
@@ -141,9 +141,9 @@ function uno(): void {
                 index = parseInt(domAttribute);
                 let card: string = hand.splice(index, 1)[0];
                 pile.push(card);
-                setup();
+                discard();
                 createCards(hand);
-                setup2();
+                discard2();
                 createPile(pile);
                 put();
             }
@@ -198,7 +198,7 @@ function uno(): void {
     
 /* Karten entfernen */
     
-    function setup(): void {
+    function discard(): void {
             let node: HTMLElement = document.getElementById("handkarten");
             if (node.parentNode) {
                 node.parentNode.removeChild(node);
@@ -209,7 +209,7 @@ function uno(): void {
         }
         
         
-        function setup2(): void {
+        function discard2(): void {
             let node: HTMLElement = document.getElementById("stack");
             if (node.parentNode) {
                 node.parentNode.removeChild(node);
