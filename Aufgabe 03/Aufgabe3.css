@@ -63,6 +63,8 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 #stack > div {
 	position: absolute;
-	top: 300px;
+	top: 100px;
 	left: 80px;
+	width: 100%;
+	height: 100%;
 }
