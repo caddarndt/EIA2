@@ -39,10 +39,6 @@ Er wurde nicht kopiert und auch nicht diktiert.
 	padding: 50px;
 }
 
-#handkarten {
-	float: left;
-}
-
 .cards {
 	border: thin solid black;
 	text-Align: center;
@@ -52,4 +48,5 @@ Er wurde nicht kopiert und auch nicht diktiert.
 	font-size: 1.5em;
 	margin: 7px;
 	line-height: 190px;
+	float: left;
 }
