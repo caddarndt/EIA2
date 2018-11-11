@@ -175,7 +175,7 @@ var Aufgabe3;
             }
             let div = document.createElement("div");
             div.setAttribute("id", "stack");
-            document.getElementsByTagName("body")[0].appendChild(div);
+            document.getElementsByTagName("stack")[0].appendChild(div);
         }
     }
     document.addEventListener("DOMContentLoaded", (uno));
