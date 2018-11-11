@@ -94,6 +94,7 @@ function uno(): void {
         takeListener();
         function takeEvent(): void {
             take(1);
+            setup();
             createCards(hand);
             put();
         }
@@ -116,6 +117,7 @@ function uno(): void {
         sort();
         function clickSort(): void {
             hand.sort();
+            setup();
             createCards(hand);
             put();
         }
@@ -139,7 +141,9 @@ function uno(): void {
                 index = parseInt(domAttribute);
                 let card: string = hand.splice(index, 1)[0];
                 pile.push(card);
+                setup();
                 createCards(hand);
+                setup2();
                 createPile(pile);
                 put();
             }
@@ -191,6 +195,30 @@ function uno(): void {
         function getRandom(_maxNum: number): number {
             return Math.floor(Math.random() * Math.floor(_maxNum));
         }
+    
+/* Karten entfernen */
+    
+    function setup(): void {
+            let node: HTMLElement = document.getElementById("handkarten");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div: HTMLElement = document.createElement("div");
+            div.setAttribute("id", "handkarten");
+            document.getElementsByTagName("body")[0].appendChild(div);
+        }
+        
+        
+        function setup2(): void {
+            let node: HTMLElement = document.getElementById("stack");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div: HTMLElement = document.createElement("div");
+            div.setAttribute("id", "stack");
+            document.getElementsByTagName("body")[0].appendChild(div);
+        }
+
         
     document.addEventListener("DOMContentLoaded", (uno));
 }

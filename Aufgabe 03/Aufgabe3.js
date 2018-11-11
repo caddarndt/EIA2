@@ -77,6 +77,7 @@ var Aufgabe3;
         takeListener();
         function takeEvent() {
             take(1);
+            setup();
             createCards(hand);
             put();
         }
@@ -94,6 +95,7 @@ var Aufgabe3;
         sort();
         function clickSort() {
             hand.sort();
+            setup();
             createCards(hand);
             put();
         }
@@ -113,7 +115,9 @@ var Aufgabe3;
                 index = parseInt(domAttribute);
                 let card = hand.splice(index, 1)[0];
                 pile.push(card);
+                setup();
                 createCards(hand);
+                setup2();
                 createPile(pile);
                 put();
             }
@@ -153,6 +157,25 @@ var Aufgabe3;
         /* Random */
         function getRandom(_maxNum) {
             return Math.floor(Math.random() * Math.floor(_maxNum));
+        }
+        /* Karten entfernen */
+        function setup() {
+            let node = document.getElementById("handkarten");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div = document.createElement("div");
+            div.setAttribute("id", "handkarten");
+            document.getElementsByTagName("body")[0].appendChild(div);
+        }
+        function setup2() {
+            let node = document.getElementById("stack");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div = document.createElement("div");
+            div.setAttribute("id", "stack");
+            document.getElementsByTagName("body")[0].appendChild(div);
         }
         document.addEventListener("DOMContentLoaded", (uno));
     }
