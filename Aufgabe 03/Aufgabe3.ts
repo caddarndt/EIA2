@@ -167,7 +167,7 @@ function uno(): void {
                 if (color == "y") {
                     color = "yellow";
                 }
-                if (color == "z") {
+                if (color == "s") {
                     color = "black";
                 }
 

@@ -137,7 +137,7 @@ var Aufgabe3;
                 if (color == "y") {
                     color = "yellow";
                 }
-                if (color == "z") {
+                if (color == "s") {
                     color = "black";
                 }
                 let value = _values[i].substr(1);
