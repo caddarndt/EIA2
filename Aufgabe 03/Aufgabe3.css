@@ -50,3 +50,9 @@ Er wurde nicht kopiert und auch nicht diktiert.
 	line-height: 190px;
 	float: left;
 }
+
+#button {
+	position: absolute;
+	top: 200px;
+	left: 300px;
+}
