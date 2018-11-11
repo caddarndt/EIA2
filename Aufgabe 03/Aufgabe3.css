@@ -60,3 +60,9 @@ Er wurde nicht kopiert und auch nicht diktiert.
 #handkarten {
 	margin-left: 40px;
 }
+
+#stack > div {
+	position: absolute;
+	top: 300px;
+	left: 80px;
+}
