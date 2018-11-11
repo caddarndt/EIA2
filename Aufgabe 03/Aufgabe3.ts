@@ -219,7 +219,7 @@ function uno(): void {
             document.getElementsByTagName("body")[0].appendChild(div);
         }
 
-        
+  }      
     document.addEventListener("DOMContentLoaded", (uno));
-}
+
 }

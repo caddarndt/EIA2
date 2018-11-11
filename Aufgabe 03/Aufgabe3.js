@@ -177,7 +177,7 @@ var Aufgabe3;
             div.setAttribute("id", "stack");
             document.getElementsByTagName("body")[0].appendChild(div);
         }
-        document.addEventListener("DOMContentLoaded", (uno));
     }
+    document.addEventListener("DOMContentLoaded", (uno));
 })(Aufgabe3 || (Aufgabe3 = {}));
 //# sourceMappingURL=Aufgabe3.js.map
