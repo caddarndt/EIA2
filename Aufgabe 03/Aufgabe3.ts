@@ -216,7 +216,7 @@ function uno(): void {
             }
             let div: HTMLElement = document.createElement("div");
             div.setAttribute("id", "stack");
-            document.getElementsByTagName("stack")[0].appendChild(div);
+            document.getElementsByTagName("body")[0].appendChild(div);
         }
 
   }      
