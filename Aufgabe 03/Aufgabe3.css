@@ -9,17 +9,6 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 @charset "ISO-8859-1";
 
-div {
-	border: thin solid black;
-	text-Align: center;
-	width: 130px;
-	height: 200px;
-	border-Radius: 10px;
-	font-size: 1.5em;
-	margin: 7px;
-	line-height: 190px;
-}
-
 #stack {
 	border: thin solid black;
 	text-align: center;
@@ -52,4 +41,15 @@ div {
 
 #handkarten {
 	float: left;
+}
+
+.cards {
+	border: thin solid black;
+	text-Align: center;
+	width: 130px;
+	height: 200px;
+	border-Radius: 10px;
+	font-size: 1.5em;
+	margin: 7px;
+	line-height: 190px;
 }

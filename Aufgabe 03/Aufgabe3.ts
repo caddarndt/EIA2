@@ -60,7 +60,7 @@ function uno(): void {
 
                 let div: HTMLDivElement = document.createElement("div");
                 document.getElementById("handkarten").appendChild(div);
-                div.setAttribute("class", "inHand");
+                div.setAttribute("class", "cards");
                 div.setAttribute("id", "a" + i);
                 document.getElementById("a" + i).innerHTML += value;
 
@@ -175,7 +175,7 @@ function uno(): void {
 
                 let div: HTMLDivElement = document.createElement("div");
                 document.getElementById("stack").appendChild(div);
-                div.setAttribute("class", "onPile");
+                div.setAttribute("class", "discarded");
                 div.setAttribute("id", "b" + i);
                 document.getElementById("b" + i).innerHTML += value;
 
