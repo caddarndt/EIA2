@@ -106,24 +106,8 @@ function uno(): void {
             }
         }
     
-    
-/* Sortieren */ 
-    
-        function sort(): void {
-            let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
-            button.addEventListener("click", clickSort);
-        }
-    
-        sort();
-        function clickSort(): void {
-            hand.sort();
-            discard();
-            createCards(hand);
-            put();
-        }
-    
-    
-/* Ablegen */       
+       
+/*Karte ablegen */       
     
         function put(): void {
             document.getElementById("handkarten").addEventListener("click", putEvent);
@@ -187,9 +171,25 @@ function uno(): void {
                     s.color = "white";
                 }
             }
-        }
-  
+        }    
     
+    
+/* Sortieren */ 
+    
+        function sort(): void {
+            let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
+            button.addEventListener("click", clickSort);
+        }
+    
+        sort();
+        function clickSort(): void {
+            hand.sort();
+            discard();
+            createCards(hand);
+            put();
+        }
+    
+        
 /* Random */    
       
         function getRandom(_maxNum: number): number {

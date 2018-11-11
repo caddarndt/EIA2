@@ -87,19 +87,7 @@ var Aufgabe3;
                 takeEvent();
             }
         }
-        /* Sortieren */
-        function sort() {
-            let button = document.getElementById("button");
-            button.addEventListener("click", clickSort);
-        }
-        sort();
-        function clickSort() {
-            hand.sort();
-            discard();
-            createCards(hand);
-            put();
-        }
-        /* Ablegen */
+        /*Karte ablegen */
         function put() {
             document.getElementById("handkarten").addEventListener("click", putEvent);
         }
@@ -153,6 +141,18 @@ var Aufgabe3;
                     s.color = "white";
                 }
             }
+        }
+        /* Sortieren */
+        function sort() {
+            let button = document.getElementById("button");
+            button.addEventListener("click", clickSort);
+        }
+        sort();
+        function clickSort() {
+            hand.sort();
+            discard();
+            createCards(hand);
+            put();
         }
         /* Random */
         function getRandom(_maxNum) {
