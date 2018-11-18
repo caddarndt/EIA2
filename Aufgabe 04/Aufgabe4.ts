@@ -317,7 +317,7 @@ let adress: string = "";
         HTML = "";
         HTML += "<a>";
         HTML += (treePrice + (ornamentsPrice * ornamentsNumber) + (candlePrice * candleNumber) + (lamettaPrice * lamettaNumber) + standPrice + deliveryPrice);
-        HTML += " €";
+        HTML += " Euro";
         HTML += "</a>";
         node.innerHTML = HTML;
     }
