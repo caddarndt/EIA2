@@ -44,7 +44,7 @@ let adress: string = "";
     
     function createProducts(): void {
 
-        document.getElementById("button").addEventListener("click", checkProgress);
+        document.getElementById("button").addEventListener("click", checkOrder);
         let node: HTMLElement = document.getElementById("konfigurator");
 
         let HTML: string;
@@ -325,12 +325,12 @@ let adress: string = "";
 
 /* Überprüfung der Bestellung */
     
-    function checkProgress(_event: Event): void {
+    function checkOrder(_event: Event): void {
         if (name == "" || adress == "" || treePrice == 0 || standPrice == 0 || ornamentsPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ornamentsNumber == 0 || lamettaNumber == 0 || candleNumber == 0) {
-            document.getElementById("notSelectedYet").innerHTML = "Bitte füllen Sie die Felder aus";
+            document.getElementById("order").innerHTML = "Bitte füllen Sie die Felder aus";
         }
         else {
-            document.getElementById("notSelectedYet").innerHTML = "Bestellung möglich";
+            document.getElementById("order").innerHTML = "Bestellung möglich";
         }
     }
     

@@ -28,7 +28,7 @@ var Aufgabe4;
     let adress = "";
     /* Hauptfunktion */
     function createProducts() {
-        document.getElementById("button").addEventListener("click", checkProgress);
+        document.getElementById("button").addEventListener("click", checkOrder);
         let node = document.getElementById("konfigurator");
         let HTML;
         /* Baumauswahl */
@@ -259,12 +259,12 @@ var Aufgabe4;
         node.innerHTML = HTML;
     }
     /* �berpr�fung der Bestellung */
-    function checkProgress(_event) {
+    function checkOrder(_event) {
         if (name == "" || adress == "" || treePrice == 0 || standPrice == 0 || ornamentsPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ornamentsNumber == 0 || lamettaNumber == 0 || candleNumber == 0) {
-            document.getElementById("notSelectedYet").innerHTML = "Bitte f�llen Sie die Felder aus";
+            document.getElementById("order").innerHTML = "Bitte f�llen Sie die Felder aus";
         }
         else {
-            document.getElementById("notSelectedYet").innerHTML = "Bestellung m�glich";
+            document.getElementById("order").innerHTML = "Bestellung m�glich";
         }
     }
 })(Aufgabe4 || (Aufgabe4 = {}));
