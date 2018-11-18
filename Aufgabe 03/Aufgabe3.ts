@@ -33,7 +33,8 @@ function uno(): void {
         let card: string = deck.splice(randomNum, 1)[0];
         hand.push(card);
     }
-        createCards(hand);
+             
+    createCards(hand);
 
     function createCards(_values: string[]): void {
         for (let i: number = 0; i < _values.length; i++) {
