@@ -36,7 +36,7 @@ var Aufgabe4;
         HTML += "<legend>Baumart</legend>";
         HTML += "<select name='Select' id='tree'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.trees.length; arrayNumber++) {
-            HTML += "<option value='" + arrayNumber + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " �'>" + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " �</option>";
+            HTML += "<option value='" + arrayNumber + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " Euro'>" + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -45,7 +45,7 @@ var Aufgabe4;
         HTML += "<legend>Weihnachtskugeln</legend>";
         HTML += "<select name='Select' id='ornaments'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.ornament.length; arrayNumber++) {
-            HTML += "<option value='" + arrayNumber + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " �'>" + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " �</option>";
+            HTML += "<option value='" + arrayNumber + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " Euro'>" + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -61,7 +61,7 @@ var Aufgabe4;
         HTML += "<legend>Kerzen</legend>";
         HTML += "<select name='Select' id='candles'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.candles.length; arrayNumber++) {
-            HTML += "<option value='" + arrayNumber + Aufgabe4.candles[arrayNumber].name + " " + Aufgabe4.candles[arrayNumber].price + " �'>" + Aufgabe4.candles[arrayNumber].name + " " + Aufgabe4.candles[arrayNumber].price + " �</option>";
+            HTML += "<option value='" + arrayNumber + Aufgabe4.candles[arrayNumber].name + " " + Aufgabe4.candles[arrayNumber].price + " Euro'>" + Aufgabe4.candles[arrayNumber].name + " " + Aufgabe4.candles[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -77,7 +77,7 @@ var Aufgabe4;
         HTML += "<legend>Lametta</legend>";
         HTML += "<select name='Select' id='lametta'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.lametta.length; arrayNumber++) {
-            HTML += "<option value='" + arrayNumber + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " �'>" + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " �</option>";
+            HTML += "<option value='" + arrayNumber + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " Euro'>" + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -92,8 +92,8 @@ var Aufgabe4;
         HTML += "<fieldset>";
         HTML += "<legend>Baumst�nder</legend>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.treestands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + Aufgabe4.treestands[arrayNumber].name + " " + Aufgabe4.treestands[arrayNumber].price + " �'  id='stand" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + Aufgabe4.treestands[arrayNumber].name + " " + Aufgabe4.treestands[arrayNumber].price + " �</label>";
+            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + Aufgabe4.treestands[arrayNumber].name + " " + Aufgabe4.treestands[arrayNumber].price + " Euro'  id='stand" + arrayNumber + "' />";
+            HTML += "<label for='check" + arrayNumber + "'>" + Aufgabe4.treestands[arrayNumber].name + " " + Aufgabe4.treestands[arrayNumber].price + " Euro</label>";
         }
         HTML += "</fieldset>";
         HTML += "<br>";
@@ -101,8 +101,8 @@ var Aufgabe4;
         HTML += "<fieldset>";
         HTML += "<legend>Lieferung</legend>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + Aufgabe4.delivery[arrayNumber].name + " " + Aufgabe4.delivery[arrayNumber].price + " �'  id='deliveryoption" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + Aufgabe4.delivery[arrayNumber].name + " " + Aufgabe4.delivery[arrayNumber].price + " �</label>";
+            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + Aufgabe4.delivery[arrayNumber].name + " " + Aufgabe4.delivery[arrayNumber].price + " Euro'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<label for='check" + arrayNumber + "'>" + Aufgabe4.delivery[arrayNumber].name + " " + Aufgabe4.delivery[arrayNumber].price + " Euro</label>";
         }
         HTML += "</fieldset>";
         HTML += "<br>";
@@ -111,7 +111,7 @@ var Aufgabe4;
         HTML += "<legend>Lieferinformationen</legend>";
         HTML += "<input id='name' type='text' name='name' placeholder='Name'/>";
         HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Adresse eingeben' >";
+        HTML += "<textarea id='adress' name='Area' cols='30' rows='2' placeholder='Adresse eingeben' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
         HTML += "</fieldset>";

@@ -57,7 +57,7 @@ let adress: string = "";
         HTML += "<select name='Select' id='tree'>";
         for (let arrayNumber: number = 0; arrayNumber < trees.length; arrayNumber++) {
 
-            HTML += "<option value='" + arrayNumber + trees[arrayNumber].name + " " + trees[arrayNumber].price + " €'>" + trees[arrayNumber].name + " " + trees[arrayNumber].price + " €</option>";
+            HTML += "<option value='" + arrayNumber + trees[arrayNumber].name + " " + trees[arrayNumber].price + " Euro'>" + trees[arrayNumber].name + " " + trees[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -70,7 +70,7 @@ let adress: string = "";
         HTML += "<select name='Select' id='ornaments'>";
         for (let arrayNumber: number = 0; arrayNumber < ornament.length; arrayNumber++) {
 
-            HTML += "<option value='" + arrayNumber + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " €'>" + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " €</option>";
+            HTML += "<option value='" + arrayNumber + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " Euro'>" + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -91,7 +91,7 @@ let adress: string = "";
         HTML += "<select name='Select' id='candles'>";
         for (let arrayNumber: number = 0; arrayNumber < candles.length; arrayNumber++) {
 
-            HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " €</option>";
+            HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " Euro'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -112,7 +112,7 @@ let adress: string = "";
         HTML += "<select name='Select' id='lametta'>";
         for (let arrayNumber: number = 0; arrayNumber < lametta.length; arrayNumber++) {
 
-            HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " €</option>";
+            HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " Euro'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " Euro</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -131,8 +131,8 @@ let adress: string = "";
         HTML += "<fieldset>";
         HTML += "<legend>Baumständer</legend>";
         for (let arrayNumber: number = 0; arrayNumber < treestands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " €'  id='stand" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " €</label>";
+            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " Euro'  id='stand" + arrayNumber + "' />";
+            HTML += "<label for='check" + arrayNumber + "'>" + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " Euro</label>";
         }
         HTML += "</fieldset>";
         HTML += "<br>";
@@ -143,8 +143,8 @@ let adress: string = "";
         HTML += "<fieldset>";
         HTML += "<legend>Lieferung</legend>";
         for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €'  id='deliveryoption" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " €</label>";
+            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " Euro'  id='deliveryoption" + arrayNumber + "' />";
+            HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " Euro</label>";
         }
         HTML += "</fieldset>";
         HTML += "<br>";
@@ -156,7 +156,7 @@ let adress: string = "";
         HTML += "<legend>Lieferinformationen</legend>";
         HTML += "<input id='name' type='text' name='name' placeholder='Name'/>";
         HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Adresse eingeben' >";
+        HTML += "<textarea id='adress' name='Area' cols='30' rows='2' placeholder='Adresse eingeben' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
         HTML += "</fieldset>";
