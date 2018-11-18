@@ -55,9 +55,9 @@ let adress: string = "";
         HTML += "<fieldset>";
         HTML += "<legend>Baumart</legend>";
         HTML += "<select name='Select' id='tree'>";
-        for (let arrayNumber: number = 0; arrayNumber < tree.length; arrayNumber++) {
+        for (let arrayNumber: number = 0; arrayNumber < trees.length; arrayNumber++) {
 
-            HTML += "<option value='" + arrayNumber + tree[arrayNumber].name + " " + tree[arrayNumber].price + " €'>" + tree[arrayNumber].name + " " + tree[arrayNumber].price + " €</option>";
+            HTML += "<option value='" + arrayNumber + trees[arrayNumber].name + " " + trees[arrayNumber].price + " €'>" + trees[arrayNumber].name + " " + trees[arrayNumber].price + " €</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -174,7 +174,7 @@ let adress: string = "";
             let node: HTMLElement = document.getElementById("treetype");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            treePrice = tree[priceIndex].price;
+            treePrice = trees[priceIndex].price;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -262,7 +262,7 @@ let adress: string = "";
         }
 
         if (target.name == "Radiogroup") {
-            let node: HTMLElement = document.getElementById("standhtml");
+            let node: HTMLElement = document.getElementById("stand");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
             standPrice = treestands[_price].price;
@@ -275,7 +275,7 @@ let adress: string = "";
         }
 
         if (target.name == "Radiogroup1") {
-            let node: HTMLElement = document.getElementById("deliveryhtml");
+            let node: HTMLElement = document.getElementById("delivery");
             let value: string = target.value;
             let _price: number = parseInt(value.substr(0, 1));
             deliveryPrice = delivery[_price].price;
@@ -288,7 +288,7 @@ let adress: string = "";
         }
 
         if (target.id == "adress") {
-            let node: HTMLElement = document.getElementById("adresshtml");
+            let node: HTMLElement = document.getElementById("adress");
             adress = target.value;
             let HTML: string;
             HTML = "";
@@ -299,7 +299,7 @@ let adress: string = "";
         }
 
         if (target.id == "name") {
-            let node: HTMLElement = document.getElementById("surnamehtml");
+            let node: HTMLElement = document.getElementById("name");
             name = target.value;
             let HTML: string;
             HTML = "";
@@ -312,7 +312,7 @@ let adress: string = "";
 
 /* Gesamtpreis */
         
-        let node: HTMLElement = document.getElementById("endpricehtml");
+        let node: HTMLElement = document.getElementById("totalprice");
         let HTML: string;
         HTML = "";
         HTML += "<a>";

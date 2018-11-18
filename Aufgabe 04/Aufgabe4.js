@@ -35,8 +35,8 @@ var Aufgabe4;
         HTML += "<fieldset>";
         HTML += "<legend>Baumart</legend>";
         HTML += "<select name='Select' id='tree'>";
-        for (let arrayNumber = 0; arrayNumber < Aufgabe4.tree.length; arrayNumber++) {
-            HTML += "<option value='" + arrayNumber + Aufgabe4.tree[arrayNumber].name + " " + Aufgabe4.tree[arrayNumber].price + " �'>" + Aufgabe4.tree[arrayNumber].name + " " + Aufgabe4.tree[arrayNumber].price + " �</option>";
+        for (let arrayNumber = 0; arrayNumber < Aufgabe4.trees.length; arrayNumber++) {
+            HTML += "<option value='" + arrayNumber + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " �'>" + Aufgabe4.trees[arrayNumber].name + " " + Aufgabe4.trees[arrayNumber].price + " �</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
@@ -124,7 +124,7 @@ var Aufgabe4;
             let node = document.getElementById("treetype");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            treePrice = Aufgabe4.tree[priceIndex].price;
+            treePrice = Aufgabe4.trees[priceIndex].price;
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -205,7 +205,7 @@ var Aufgabe4;
             node.innerHTML = HTML;
         }
         if (target.name == "Radiogroup") {
-            let node = document.getElementById("standhtml");
+            let node = document.getElementById("stand");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
             standPrice = Aufgabe4.treestands[_price].price;
@@ -217,7 +217,7 @@ var Aufgabe4;
             node.innerHTML = HTML;
         }
         if (target.name == "Radiogroup1") {
-            let node = document.getElementById("deliveryhtml");
+            let node = document.getElementById("delivery");
             let value = target.value;
             let _price = parseInt(value.substr(0, 1));
             deliveryPrice = Aufgabe4.delivery[_price].price;
@@ -229,7 +229,7 @@ var Aufgabe4;
             node.innerHTML = HTML;
         }
         if (target.id == "adress") {
-            let node = document.getElementById("adresshtml");
+            let node = document.getElementById("adress");
             adress = target.value;
             let HTML;
             HTML = "";
@@ -239,7 +239,7 @@ var Aufgabe4;
             node.innerHTML = HTML;
         }
         if (target.id == "name") {
-            let node = document.getElementById("surnamehtml");
+            let node = document.getElementById("name");
             name = target.value;
             let HTML;
             HTML = "";
@@ -249,7 +249,7 @@ var Aufgabe4;
             node.innerHTML = HTML;
         }
         /* Gesamtpreis */
-        let node = document.getElementById("endpricehtml");
+        let node = document.getElementById("totalprice");
         let HTML;
         HTML = "";
         HTML += "<a>";

@@ -5,7 +5,7 @@ export interface Products {
     price: number;
 }
     
-export let tree: Products[] = [ {name: "Nordmanntanne,", price: 75}, {name: "Blaufichte,", price: 60}, {name: "Rotfichte,", price: 80}, {name: "Kiefer,", price: 45}, {name: "Edeltanne,", price: 50}];
+export let trees: Products[] = [ {name: "Nordmanntanne,", price: 75}, {name: "Blaufichte,", price: 60}, {name: "Rotfichte,", price: 80}, {name: "Kiefer,", price: 45}, {name: "Edeltanne,", price: 50}];
 export let ornament: Products[] = [{name: "Kugeln w‰hlen,", price: 0}, {name: "gold,", price: 3}, {name: "silber,", price: 3}, {name: "rot,", price: 5}, {name: "blau,", price: 5}, {name: "violett,", price: 5}];
 export let lametta: Products[] = [{name: "Lametta w‰hlen,", price: 0}, {name: "gold,", price: 2.99}, {name: "silber,", price: 2.99}, {name: "rot,", price: 2.99}, {name: "blau,", price: 2.99}, {name: "violett,", price: 2.99}];
 export let candles: Products[] = [{name: "Kerzen w‰hlen,", price: 0}, {name: "weiﬂ,", price: 5}, {name: "rot,", price: 5}, {name: "gold,", price: 6}, {name: "silber,", price: 6}];
