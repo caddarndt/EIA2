@@ -43,13 +43,13 @@ var Aufgabe4;
         /* Weihnachtskugeln */
         HTML += "<fieldset>";
         HTML += "<legend>Weihnachtskugeln</legend>";
-        HTML += "<select name='Select' id='balls'>";
+        HTML += "<select name='Select' id='ornaments'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.ornament.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " �'>" + Aufgabe4.ornament[arrayNumber].name + " " + Aufgabe4.ornament[arrayNumber].price + " �</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountBalls'>";
+        HTML += "<select name='Select' id='ornamentsNumber'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -65,7 +65,7 @@ var Aufgabe4;
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountCandles'>";
+        HTML += "<select name='Select' id='candlesNumber'>";
         for (let amountNumber = 0; amountNumber < 5; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -75,13 +75,13 @@ var Aufgabe4;
         /* Lametta */
         HTML += "<fieldset>";
         HTML += "<legend>Lametta</legend>";
-        HTML += "<select name='Select' id='Lametta'>";
+        HTML += "<select name='Select' id='lametta'>";
         for (let arrayNumber = 0; arrayNumber < Aufgabe4.lametta.length; arrayNumber++) {
             HTML += "<option value='" + arrayNumber + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " �'>" + Aufgabe4.lametta[arrayNumber].name + " " + Aufgabe4.lametta[arrayNumber].price + " �</option>";
         }
         HTML += "</select>";
         HTML += "<br><br>";
-        HTML += "<select name='Select' id='amountLametta'>";
+        HTML += "<select name='Select' id='lamettaNumber'>";
         for (let amountNumber = 0; amountNumber < 10; amountNumber++) {
             HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
         }
@@ -111,7 +111,7 @@ var Aufgabe4;
         HTML += "<legend>Lieferinformationen</legend>";
         HTML += "<input id='name' type='text' name='name' placeholder='Name'/>";
         HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Please enter your adress' >";
+        HTML += "<textarea id='adress' name='Area' cols='30' rows='4' placeholder='Adresse eingeben' >";
         HTML += "</textarea>";
         HTML += "<br><br>";
         HTML += "</fieldset>";
