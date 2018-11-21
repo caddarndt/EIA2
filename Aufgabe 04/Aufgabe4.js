@@ -30,8 +30,8 @@ var Aufgabe4;
             let childNodeHTML;
             childNodeHTML = "<h3>Baumart</h3>";
             childNodeHTML += "<select name='Select' id='tree'>";
-            for (let i = 0; i < Aufgabe4_1.tree.length; i++) {
-                childNodeHTML += "<option value='" + i + Aufgabe4_1.tree[i].name + "'>" + Aufgabe4_1.tree[i].name + "</option>";
+            for (let i = 0; i < Aufgabe4_1.trees.length; i++) {
+                childNodeHTML += "<option value='" + i + Aufgabe4_1.trees[i].name + "'>" + Aufgabe4_1.trees[i].name + "</option>";
             }
             childNodeHTML += "</select>";
             childNodeHTML += "<br>";
@@ -87,12 +87,12 @@ var Aufgabe4;
         //* Handle Change *//    
         function handleChange(_event) {
             let target = _event.target;
-            if (target.id == "tree") {
+            if (target.id == "trees") {
                 let node = document.getElementById("tree");
                 let value = target.value;
                 let priceIndex = parseInt(value.substr(0, 1));
                 let childNodeHTML;
-                treePrice = Aufgabe4_1.tree[priceIndex].price;
+                treePrice = Aufgabe4_1.trees[priceIndex].price;
                 childNodeHTML = "";
                 childNodeHTML += "<a>";
                 childNodeHTML += " " + value.substr(1);

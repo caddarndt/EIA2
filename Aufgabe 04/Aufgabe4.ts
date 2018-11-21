@@ -39,8 +39,8 @@ let postcode: string = "";
         
         childNodeHTML = "<h3>Baumart</h3>";
         childNodeHTML += "<select name='Select' id='tree'>";
-        for (let i: number = 0; i < tree.length; i++) {
-            childNodeHTML += "<option value='" + i + tree[i].name + "'>" + tree[i].name + "</option>";
+        for (let i: number = 0; i < trees.length; i++) {
+            childNodeHTML += "<option value='" + i + trees[i].name + "'>" + trees[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -103,12 +103,12 @@ let postcode: string = "";
     function handleChange(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
 
-        if (target.id == "tree") {
+        if (target.id == "trees") {
             let node: HTMLElement = document.getElementById("tree");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             let childNodeHTML: string;
-            treePrice = tree[priceIndex].price;
+            treePrice = trees[priceIndex].price;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += " " + value.substr(1);
