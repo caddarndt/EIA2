@@ -38,9 +38,9 @@ let postcode: string = "";
         let childNodeHTML: string;
         
         childNodeHTML = "<h3>Baumart</h3>";
-        childNodeHTML += "<select name='Select' id='trees'>";
-        for (let i: number = 0; i < trees.length; i++) {
-            childNodeHTML += "<option value='" + i + trees[i].name + "'>" + trees[i].name + "</option>";
+        childNodeHTML += "<select name='Select' id='tree'>";
+        for (let i: number = 0; i < tree.length; i++) {
+            childNodeHTML += "<option value='" + i + tree[i].name + "'>" + tree[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -66,9 +66,9 @@ let postcode: string = "";
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Baumstaender</h3>";
-        childNodeHTML += "<select name='Select' id='stands'>";
-        for (let i: number = 0; i < stands.length; i++) {
-            childNodeHTML += "<option value='" + i + stands[i].name + "'>" + stands[i].name + "</option>";
+        childNodeHTML += "<select name='Select' id='holders'>";
+        for (let i: number = 0; i < stand.length; i++) {
+            childNodeHTML += "<option value='" + i + stand[i].name + "'>" + stand[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -108,7 +108,7 @@ let postcode: string = "";
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             let childNodeHTML: string;
-            treePrice = trees[priceIndex].price;
+            treePrice = tree[priceIndex].price;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += " " + value.substr(1);
