@@ -65,7 +65,7 @@ let postcode: string = "";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<h3>Baumständer</h3>";
+        childNodeHTML += "<h3>Baumstaender</h3>";
         childNodeHTML += "<select name='Select' id='holders'>";
         for (let i: number = 0; i < stand.length; i++) {
             childNodeHTML += "<option value='" + i + stand[i].name + "'>" + stand[i].name + "</option>";
