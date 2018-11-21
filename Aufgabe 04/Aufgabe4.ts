@@ -9,329 +9,247 @@ Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert.
 */   
     
-document.addEventListener("DOMContentLoaded", createProducts);
-document.addEventListener("DOMContentLoaded", changeListener);
+namespace Aufgabe4 {
+    
+//* Event Listener *//   
+    
+    document.addEventListener("DOMContentLoaded", writeHTML);
+    document.addEventListener("DOMContentLoaded", init);
 
     
-    function changeListener(_event: Event): void {
-        let fieldset: HTMLElement = document.getElementById("konfigurator");
-        fieldset.addEventListener("change", handleChange);
-    }
+//* Variablen für die Auswahl *//    
 
-
-/* Variablen für Eingaben */
-    
 let treePrice: number = 0;
-
-let ornamentsNumber: number = 0;
-let ornamentsPrice: number = 0;
-    
-let lamettaNumber: number = 0;
-let lamettaPrice: number = 0;
-    
-let candleNumber: number = 0;
+let ballPrice: number = 0;
 let candlePrice: number = 0;
-    
+let tinselPrice: number = 0;
 let standPrice: number = 0;
-    
 let deliveryPrice: number = 0;
+let place: string = "";
+let street: string = "";
+let nummer: string = "";
+let postcode: string = "";
 
-let name: string = "";
-let adress: string = "";
-
-
-/* Hauptfunktion */
     
-    function createProducts(): void {
-
-        document.getElementById("button").addEventListener("click", checkOrder);
-        let node: HTMLElement = document.getElementById("konfigurator");
-
-        let HTML: string;
-
-
-/* Baumauswahl */
+//* Hauptfunktion, Aufbau des Inhalts vom Fieldset *//   
+    
+    function writeHTML(): void {
+        let node: HTMLElement = document.getElementById("fieldset");
+        let childNodeHTML: string;
         
-        HTML += "<fieldset>";
-        HTML += "<legend>Baumart</legend>";
-        HTML += "<select name='Select' id='tree'>";
-        for (let arrayNumber: number = 0; arrayNumber < trees.length; arrayNumber++) {
-
-            HTML += "<option value='" + arrayNumber + trees[arrayNumber].name + " " + trees[arrayNumber].price + " Euro'>" + trees[arrayNumber].name + " " + trees[arrayNumber].price + " Euro</option>";
+        childNodeHTML = "<h3>Baumart</h3>";
+        childNodeHTML += "<select name='Select' id='tree'>";
+        for (let i: number = 0; i < tree.length; i++) {
+            childNodeHTML += "<option value='" + i + tree[i].name + "'>" + tree[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "<br><br>";
-
-
-/* Weihnachtskugeln */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Weihnachtskugeln</legend>";
-        HTML += "<select name='Select' id='ornaments'>";
-        for (let arrayNumber: number = 0; arrayNumber < ornament.length; arrayNumber++) {
-
-            HTML += "<option value='" + arrayNumber + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " Euro'>" + ornament[arrayNumber].name + " " + ornament[arrayNumber].price + " Euro</option>";
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Weihnachtskugeln</h3>";
+        childNodeHTML += "<select name='Select' id='christmasBalls'>";
+        for (let i: number = 0; i < christmasBall.length; i++) {
+            childNodeHTML += "<option value='" + i + christmasBall[i].name + "'>" + christmasBall[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "<br><br>";
-        HTML += "<select name='Select' id='ornamentsNumber'>";
-        for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
-            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Kerzen</h3>";
+        childNodeHTML += "<select name='Select' id='candles'>";
+        for (let i: number = 0; i < candle.length; i++) {
+            childNodeHTML += "<option value='" + i + candle[i].name + "'>" + candle[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "</fieldset>";
-        HTML += "<br>";
-
-
-/* Kerzen */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Kerzen</legend>";
-        HTML += "<select name='Select' id='candles'>";
-        for (let arrayNumber: number = 0; arrayNumber < candles.length; arrayNumber++) {
-
-            HTML += "<option value='" + arrayNumber + candles[arrayNumber].name + " " + candles[arrayNumber].price + " Euro'>" + candles[arrayNumber].name + " " + candles[arrayNumber].price + " Euro</option>";
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Lametta</h3>";
+        childNodeHTML += "<select name='Select' id='tinsels'>";
+        for (let i: number = 0; i < tinsel.length; i++) {
+            childNodeHTML += "<option value='" + i + tinsel[i].name + "'>" + tinsel[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "<br><br>";
-        HTML += "<select name='Select' id='candlesNumber'>";
-        for (let amountNumber: number = 0; amountNumber < 5; amountNumber++) {
-
-            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Baumständer</h3>";
+        childNodeHTML += "<select name='Select' id='holders'>";
+        for (let i: number = 0; i < stand.length; i++) {
+            childNodeHTML += "<option value='" + i + stand[i].name + "'>" + stand[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "</fieldset>";
-        HTML += "<br>";
-        
-       
-/* Lametta */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Lametta</legend>";
-        HTML += "<select name='Select' id='lametta'>";
-        for (let arrayNumber: number = 0; arrayNumber < lametta.length; arrayNumber++) {
-
-            HTML += "<option value='" + arrayNumber + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " Euro'>" + lametta[arrayNumber].name + " " + lametta[arrayNumber].price + " Euro</option>";
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Lieferoption</h3>";
+        childNodeHTML += "<select name='Select' id='deliveries'>";
+        for (let i: number = 0; i < delivery.length; i++) {
+            childNodeHTML += "<option value='" + i + delivery[i].name + "'>" + delivery[i].name + "</option>";
         }
-        HTML += "</select>";
-        HTML += "<br><br>";
-        HTML += "<select name='Select' id='lamettaNumber'>";
-        for (let amountNumber: number = 0; amountNumber < 10; amountNumber++) {
-
-            HTML += "<option value='*" + amountNumber + "'>" + amountNumber + "</option>";
-        }
-        HTML += "</select>";
-        HTML += "</fieldset>";
-        HTML += "<br>";
-
-
-/* Baumständer */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Baumständer</legend>";
-        for (let arrayNumber: number = 0; arrayNumber < treestands.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup' value='" + arrayNumber + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " Euro'  id='stand" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + treestands[arrayNumber].name + " " + treestands[arrayNumber].price + " Euro</label>";
-        }
-        HTML += "</fieldset>";
-        HTML += "<br>";
-
-
-/* Lieferoptionen */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Lieferung</legend>";
-        for (let arrayNumber: number = 0; arrayNumber < delivery.length; arrayNumber++) {
-            HTML += "<input type='radio' name='Radiogroup1' value='" + arrayNumber + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " Euro'  id='deliveryoption" + arrayNumber + "' />";
-            HTML += "<label for='check" + arrayNumber + "'>" + delivery[arrayNumber].name + " " + delivery[arrayNumber].price + " Euro</label>";
-        }
-        HTML += "</fieldset>";
-        HTML += "<br>";
-
-
-/* Lieferinformationen */
-        
-        HTML += "<fieldset>";
-        HTML += "<legend>Lieferinformationen</legend>";
-        HTML += "<input id='name' type='text' name='name' placeholder='Name'/>";
-        HTML += "<br><br>";
-        HTML += "<textarea id='adress' name='Area' cols='30' rows='2' placeholder='Adresse eingeben' >";
-        HTML += "</textarea>";
-        HTML += "<br><br>";
-        HTML += "</fieldset>";
-
-        node.innerHTML += HTML;
+        childNodeHTML += "</select>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<h3>Lieferinformationen</h3>";
+        childNodeHTML += "<input id='streets' type='text' name='Text' placeholder='Straße' required/>";
+        childNodeHTML += "<input id='numbers' type='text' name='Text' placeholder='Hausnummer' required/>";
+        childNodeHTML += "<br>";
+        childNodeHTML += "<input id='postcodes' type='text' name='Pattern' pattern='[0-9]{5}' placeholder='PLZ' required/>";
+        childNodeHTML += "<input id='places' type='text' name='Text' placeholder='Ort' required/>";
+        childNodeHTML += "<br>";
+        node.innerHTML += childNodeHTML;
+    }
+ 
+    
+    function init(_event: Event): void {
+        let fieldset: HTMLElement = document.getElementById("fieldset");
+        fieldset.addEventListener("change", handleChange);
+        document.getElementById("check").addEventListener("click", checkInputs);
     }
 
-
-/* Handle Change */
-     
+  
+    
+//* Handle Change *//    
+    
     function handleChange(_event: Event): void {
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
 
-        if (target.id == "Baum") {
-            let node: HTMLElement = document.getElementById("treetype");
+        if (target.id == "tree") {
+            let node: HTMLElement = document.getElementById("tree");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
-            treePrice = trees[priceIndex].price;
             let childNodeHTML: string;
+            treePrice = tree[priceIndex].price;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += " " + value.substr(1);
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
+            console.log(treePrice);
         }
-
-        if (target.id == "Kugeln") {
-            let node: HTMLElement = document.getElementById("ornaments");
+        
+        if (target.id == "christmasBalls") {
+            let node: HTMLElement = document.getElementById("ball");
             let value: string = target.value;
-            let _price: number = parseInt(value.substr(0, 1));
-            ornamentsPrice = ornament[_price].price;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + value.substr(1);
-            HTML += "</a>";
-            node.innerHTML = HTML;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            let childNodeHTML: string;
+            ballPrice = christmasBall[priceIndex].price;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+            console.log(ballPrice);
         }
-
-        if (target.id == "amountOrnaments") {
-            let node: HTMLElement = document.getElementById("ornamentsnumber");
-            let value: string = target.value;
-            let _number: number = parseInt(value.substr(1, 2));
-            ornamentsNumber = _number;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + target.value;
-            HTML += "</a>";
-            node.innerHTML = HTML;
-        }
-
+        
         if (target.id == "candles") {
-            let node: HTMLElement = document.getElementById("candles");
+            let node: HTMLElement = document.getElementById("candle");
             let value: string = target.value;
-            let _price: number = parseInt(value.substr(0, 1));
-            candlePrice = candles[_price].price;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + value.substr(1);
-            HTML += "</a>";
-            node.innerHTML = HTML;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            let childNodeHTML: string;
+            candlePrice = candle[priceIndex].price;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+            console.log(candlePrice);
         }
-
-        if (target.id == "amountCandles") {
-            let node: HTMLElement = document.getElementById("candlesnumber");
+        
+        if (target.id == "tinsels") {
+            let node: HTMLElement = document.getElementById("tinsel");
             let value: string = target.value;
-            let _number: number = parseInt(value.substr(1, 2));
-            candleNumber = _number;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + target.value;
-            HTML += "</a>";
-            node.innerHTML = HTML;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            let childNodeHTML: string;
+            tinselPrice = tinsel[priceIndex].price;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+            console.log(tinselPrice);
         }
-
-        if (target.id == "Lametta") {
-            let node: HTMLElement = document.getElementById("lametta");
+        
+        if (target.id == "holders") {
+            let node: HTMLElement = document.getElementById("holder");
             let value: string = target.value;
-            let _price: number = parseInt(value.substr(0, 1));
-            lamettaPrice = lametta[_price].price;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + value.substr(1);
-            HTML += "</a>";
-            node.innerHTML = HTML;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            let childNodeHTML: string;
+            standPrice = stand[priceIndex].price;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+            console.log(standPrice);
         }
-
-        if (target.id == "amountLametta") {
-            let node: HTMLElement = document.getElementById("lamettaNumber");
-            let value: string = target.value;
-            let _number: number = parseInt(value.substr(1, 2));
-            lamettaNumber = _number;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + target.value;
-            HTML += "</a>";
-            node.innerHTML = HTML;
-        }
-
-        if (target.name == "Radiogroup") {
-            let node: HTMLElement = document.getElementById("stand");
-            let value: string = target.value;
-            let _price: number = parseInt(value.substr(0, 1));
-            standPrice = treestands[_price].price;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + value.substr(1);
-            HTML += "</a>";
-            node.innerHTML = HTML;
-        }
-
-        if (target.name == "Radiogroup1") {
+        
+        if (target.id == "deliveries") {
             let node: HTMLElement = document.getElementById("delivery");
             let value: string = target.value;
-            let _price: number = parseInt(value.substr(0, 1));
-            deliveryPrice = delivery[_price].price;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + value.substr(1);
-            HTML += "</a>";
-            node.innerHTML = HTML;
+            let priceIndex: number = parseInt(value.substr(0, 1));
+            let childNodeHTML: string;
+            deliveryPrice = delivery[priceIndex].price;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + value.substr(1);
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+            console.log(deliveryPrice);
         }
 
-        if (target.id == "adress") {
-            let node: HTMLElement = document.getElementById("adress");
-            adress = target.value;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + target.value;
-            HTML += "</a>";
-            node.innerHTML = HTML;
+        if (target.id == "streets") {
+            let node: HTMLElement = document.getElementById("street");
+            street = target.value;
+            let childNodeHTML: string;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + target.value;
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
         }
 
-        if (target.id == "name") {
-            let node: HTMLElement = document.getElementById("name");
-            name = target.value;
-            let HTML: string;
-            HTML = "";
-            HTML += "<a>";
-            HTML += " " + target.value;
-            HTML += "</a>";
-            node.innerHTML = HTML;
+        if (target.id == "numbers") {
+            let node: HTMLElement = document.getElementById("number");
+            nummer = target.value;
+            let childNodeHTML: string;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + target.value;
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
         }
 
+        if (target.id == "postcodes") {
+            let node: HTMLElement = document.getElementById("postcode");
+            postcode = target.value;
+            let childNodeHTML: string;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + target.value;
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+        }
 
-/* Gesamtpreis */
+        if (target.id == "places") {
+            let node: HTMLElement = document.getElementById("place");
+            place = target.value;
+            let childNodeHTML: string;
+            childNodeHTML = "";
+            childNodeHTML += "<a>";
+            childNodeHTML += " " + target.value;
+            childNodeHTML += "</a>";
+            node.innerHTML = childNodeHTML;
+        }
         
-        let node: HTMLElement = document.getElementById("totalprice");
         let HTML: string;
-        HTML = "";
-        HTML += "<a>";
-        HTML += (treePrice + (ornamentsPrice * ornamentsNumber) + (candlePrice * candleNumber) + (lamettaPrice * lamettaNumber) + standPrice + deliveryPrice);
+        let node: HTMLElement = document.getElementById("price");
+        HTML = " ";
+        HTML += (treePrice + ballPrice + candlePrice + tinselPrice + standPrice + deliveryPrice);
         HTML += " Euro";
-        HTML += "</a>";
         node.innerHTML = HTML;
-    }
+        }
 
 
-/* Überprüfung der Bestellung */
+//* Bestellung prüfen *//    
     
-    function checkOrder(_event: Event): void {
-        if (name == "" || adress == "" || treePrice == 0 || standPrice == 0 || ornamentsPrice == 0 || lamettaPrice == 0 || candlePrice == 0 || deliveryPrice == 0 || ornamentsNumber == 0 || lamettaNumber == 0 || candleNumber == 0) {
-            document.getElementById("order").innerHTML = "Bitte füllen Sie die Felder aus";
-        }
+    function checkInputs(): void {
+        console.log("Error");
+        if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || place == "" || nummer == "" || postcode == "" || street == "")
+         document.getElementById("buttonCheck").innerHTML = "Füllen Sie die Felder aus!"; 
         else {
-            document.getElementById("order").innerHTML = "Bestellung möglich";
+            document.getElementById("buttonCheck").innerHTML = "";
         }
     }
+}
     
 }

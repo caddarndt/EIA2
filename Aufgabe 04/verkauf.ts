@@ -1,15 +1,14 @@
 namespace Aufgabe4 {
     
-export interface Products {
+export interface Product {
     name: string;
     price: number;
 }
     
-export let trees: Products[] = [ {name: "Nordmanntanne,", price: 75}, {name: "Blaufichte,", price: 60}, {name: "Rotfichte,", price: 80}, {name: "Kiefer,", price: 45}, {name: "Edeltanne,", price: 50}];
-export let ornament: Products[] = [{name: "Kugeln wählen,", price: 0}, {name: "gold,", price: 3}, {name: "silber,", price: 3}, {name: "rot,", price: 5}, {name: "blau,", price: 5}, {name: "violett,", price: 5}];
-export let lametta: Products[] = [{name: "Lametta wählen,", price: 0}, {name: "gold,", price: 2.99}, {name: "silber,", price: 2.99}, {name: "rot,", price: 2.99}, {name: "blau,", price: 2.99}, {name: "violett,", price: 2.99}];
-export let candles: Products[] = [{name: "Kerzen wählen,", price: 0}, {name: "weiß,", price: 5}, {name: "rot,", price: 5}, {name: "gold,", price: 6}, {name: "silber,", price: 6}];
-export let treestands: Products[] = [{name: "keinen,", price: 0}, {name: "Holz rustikal,", price: 15}, {name: "Metall silber,", price: 10}, {name: "Keramik,", price: 18}];
-export let delivery: Products[] = [ {name: "DHL", price: 25}, {name: "Hermes", price: 20}, {name: "UPS", price: 40}];
- 
+    export let tree: Product[] = [{ name: "", price: 0 }, { name: "Nordmanntanne (50 Euro)", price: 50 }, { name: "Blaufichte (40 Euro)", price: 40 }, { name: "Rotfichte (65 Euro)", price: 65 }, { name: "Edeltanne (80 Euro)", price: 80 } ];
+    export let christmasBall: Product[] = [{ name: "", price: 0 }, { name: "Rot 10 Stück (10 Euro)", price: 10 }, { name: "Gold 10 Stück (12 Euro)", price: 12 }, { name: "Silber 10 Stück (12 Euro)", price: 12 }, { name: "Blau 10 Stück (8 Euro)", price: 8 }, { name: "Violett 10 Stück (10 Euro)", price: 10 }];
+    export let tinsel: Product[] = [{ name: "", price: 0 }, { name: "Gold (3 Euro)", price: 3 }, { name: "Silber (3 Euro)", price: 3 }, { name: "Rot 50cm (2 Euro)", price: 2 }, { name: "Blau 50cm (4 Euro)", price: 4 }, { name: "Violett 50cm (3 Euro)", price: 3 }];
+    export let stand: Product[] = [{ name: "", price: 0 }, { name: "Holz rustikal (20 Euro)", price: 20 }, { name: "Metall silber (20 Euro)", price: 20 }, { name: "Keramik (29 Euro)", price: 29 }];
+    export let delivery: Product[] = [{ name: "", price: 0 }, { name: "UPS (18 Euro)", price: 18 }, { name: "DHL (15 Euro)", price: 15 }, { name: "Hermes (12 Euro)", price: 12 }];
+    export let candle: Product[] = [{ name: "", price: 0 }, { name: "Rot (7 Euro)", price: 7 }, { name: "Weiß (10 Euro)", price: 10 }, { name: "Elektrisch (15 Euro)", price: 15 }];
 }
