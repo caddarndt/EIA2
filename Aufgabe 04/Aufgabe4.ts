@@ -79,12 +79,10 @@ let adress: string = "";
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Lieferinformationen</h3>";
-        childNodeHTML += "<input id='streets' type='text' name='Text' placeholder='Straße' required/>";
-        childNodeHTML += "<input id='numbers' type='text' name='Text' placeholder='Hausnummer' required/>";
+        childNodeHTML += "<input id='names' type='text' name='Text' placeholder='Name' required/>";
+        childNodeHTML += "<input id='adresses' type='text' name='Text' placeholder='Adresse' required/>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<input id='postcodes' type='text' name='Pattern' pattern='[0-9]{5}' placeholder='PLZ' required/>";
-        childNodeHTML += "<input id='places' type='text' name='Text' placeholder='Ort' required/>";
-        childNodeHTML += "<br>";
+  
         node.innerHTML += childNodeHTML;
     }
  
