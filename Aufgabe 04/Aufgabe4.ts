@@ -25,10 +25,9 @@ let candlePrice: number = 0;
 let tinselPrice: number = 0;
 let standPrice: number = 0;
 let deliveryPrice: number = 0;
-let place: string = "";
-let street: string = "";
-let nummer: string = "";
-let postcode: string = "";
+let name: string = "";
+let adress: string = "";
+
 
     
 //* Hauptfunktion, Aufbau des Inhalts vom Fieldset *//   
@@ -189,7 +188,7 @@ let postcode: string = "";
 
         if (target.id == "names") {
             let node: HTMLElement = document.getElementById("name");
-            street = target.value;
+            name = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -200,7 +199,7 @@ let postcode: string = "";
 
         if (target.id == "adresses") {
             let node: HTMLElement = document.getElementById("adress");
-            nummer = target.value;
+            adress = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -222,7 +221,7 @@ let postcode: string = "";
     
     function checkInputs(): void {
         console.log("Error");
-        if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || place == "" || nummer == "" || postcode == "" || street == "")
+        if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || name == "" || adress == "")
          document.getElementById("buttonCheck").innerHTML = "Füllen Sie die Felder aus!"; 
         else {
             document.getElementById("buttonCheck").innerHTML = "";

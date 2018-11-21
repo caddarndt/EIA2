@@ -20,10 +20,8 @@ var Aufgabe4;
         let tinselPrice = 0;
         let standPrice = 0;
         let deliveryPrice = 0;
-        let place = "";
-        let street = "";
-        let nummer = "";
-        let postcode = "";
+        let name = "";
+        let adress = "";
         //* Hauptfunktion, Aufbau des Inhalts vom Fieldset *//   
         function writeHTML() {
             let node = document.getElementById("fieldset");
@@ -167,7 +165,7 @@ var Aufgabe4;
             }
             if (target.id == "names") {
                 let node = document.getElementById("name");
-                street = target.value;
+                name = target.value;
                 let childNodeHTML;
                 childNodeHTML = "";
                 childNodeHTML += "<a>";
@@ -177,7 +175,7 @@ var Aufgabe4;
             }
             if (target.id == "adresses") {
                 let node = document.getElementById("adress");
-                nummer = target.value;
+                adress = target.value;
                 let childNodeHTML;
                 childNodeHTML = "";
                 childNodeHTML += "<a>";
@@ -195,7 +193,7 @@ var Aufgabe4;
         //* Bestellung pr�fen *//    
         function checkInputs() {
             console.log("Error");
-            if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || place == "" || nummer == "" || postcode == "" || street == "")
+            if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || name == "" || adress == "")
                 document.getElementById("buttonCheck").innerHTML = "F�llen Sie die Felder aus!";
             else {
                 document.getElementById("buttonCheck").innerHTML = "";
