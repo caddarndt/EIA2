@@ -165,8 +165,8 @@ var Aufgabe4;
                 node.innerHTML = childNodeHTML;
                 console.log(deliveryPrice);
             }
-            if (target.id == "streets") {
-                let node = document.getElementById("street");
+            if (target.id == "names") {
+                let node = document.getElementById("name");
                 street = target.value;
                 let childNodeHTML;
                 childNodeHTML = "";
@@ -175,29 +175,9 @@ var Aufgabe4;
                 childNodeHTML += "</a>";
                 node.innerHTML = childNodeHTML;
             }
-            if (target.id == "numbers") {
-                let node = document.getElementById("number");
+            if (target.id == "adresses") {
+                let node = document.getElementById("adress");
                 nummer = target.value;
-                let childNodeHTML;
-                childNodeHTML = "";
-                childNodeHTML += "<a>";
-                childNodeHTML += " " + target.value;
-                childNodeHTML += "</a>";
-                node.innerHTML = childNodeHTML;
-            }
-            if (target.id == "postcodes") {
-                let node = document.getElementById("postcode");
-                postcode = target.value;
-                let childNodeHTML;
-                childNodeHTML = "";
-                childNodeHTML += "<a>";
-                childNodeHTML += " " + target.value;
-                childNodeHTML += "</a>";
-                node.innerHTML = childNodeHTML;
-            }
-            if (target.id == "places") {
-                let node = document.getElementById("place");
-                place = target.value;
                 let childNodeHTML;
                 childNodeHTML = "";
                 childNodeHTML += "<a>";

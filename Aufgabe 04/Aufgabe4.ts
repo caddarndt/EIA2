@@ -187,8 +187,8 @@ let postcode: string = "";
             console.log(deliveryPrice);
         }
 
-        if (target.id == "streets") {
-            let node: HTMLElement = document.getElementById("street");
+        if (target.id == "names") {
+            let node: HTMLElement = document.getElementById("name");
             street = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
@@ -198,31 +198,9 @@ let postcode: string = "";
             node.innerHTML = childNodeHTML;
         }
 
-        if (target.id == "numbers") {
-            let node: HTMLElement = document.getElementById("number");
+        if (target.id == "adresses") {
+            let node: HTMLElement = document.getElementById("adress");
             nummer = target.value;
-            let childNodeHTML: string;
-            childNodeHTML = "";
-            childNodeHTML += "<a>";
-            childNodeHTML += " " + target.value;
-            childNodeHTML += "</a>";
-            node.innerHTML = childNodeHTML;
-        }
-
-        if (target.id == "postcodes") {
-            let node: HTMLElement = document.getElementById("postcode");
-            postcode = target.value;
-            let childNodeHTML: string;
-            childNodeHTML = "";
-            childNodeHTML += "<a>";
-            childNodeHTML += " " + target.value;
-            childNodeHTML += "</a>";
-            node.innerHTML = childNodeHTML;
-        }
-
-        if (target.id == "places") {
-            let node: HTMLElement = document.getElementById("place");
-            place = target.value;
             let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
