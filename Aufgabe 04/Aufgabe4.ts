@@ -38,7 +38,7 @@ let postcode: string = "";
         let childNodeHTML: string;
         
         childNodeHTML = "<h3>Baumart</h3>";
-        childNodeHTML += "<select name='Select' id='tree'>";
+        childNodeHTML += "<select name='Select' id='trees'>";
         for (let i: number = 0; i < trees.length; i++) {
             childNodeHTML += "<option value='" + i + trees[i].name + "'>" + trees[i].name + "</option>";
         }
@@ -66,9 +66,9 @@ let postcode: string = "";
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Baumstaender</h3>";
-        childNodeHTML += "<select name='Select' id='holders'>";
-        for (let i: number = 0; i < stand.length; i++) {
-            childNodeHTML += "<option value='" + i + stand[i].name + "'>" + stand[i].name + "</option>";
+        childNodeHTML += "<select name='Select' id='stands'>";
+        for (let i: number = 0; i < stands.length; i++) {
+            childNodeHTML += "<option value='" + i + stands[i].name + "'>" + stands[i].name + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
