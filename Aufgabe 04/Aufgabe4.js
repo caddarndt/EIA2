@@ -139,8 +139,8 @@ var Aufgabe4;
                 node.innerHTML = childNodeHTML;
                 console.log(tinselPrice);
             }
-            if (target.id == "holders") {
-                let node = document.getElementById("holder");
+            if (target.id == "stands") {
+                let node = document.getElementById("stand");
                 let value = target.value;
                 let priceIndex = parseInt(value.substr(0, 1));
                 let childNodeHTML;

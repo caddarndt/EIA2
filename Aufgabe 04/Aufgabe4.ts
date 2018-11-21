@@ -159,8 +159,8 @@ let postcode: string = "";
             console.log(tinselPrice);
         }
         
-        if (target.id == "holders") {
-            let node: HTMLElement = document.getElementById("holder");
+        if (target.id == "stands") {
+            let node: HTMLElement = document.getElementById("stand");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             let childNodeHTML: string;
