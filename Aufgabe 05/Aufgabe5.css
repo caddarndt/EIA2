@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#fieldset {
+	width: 55%;
+	float: left;
+	margin-right: 5%;
+	border: none;
+}
+
+button {
+	margin: 2%;
+}
