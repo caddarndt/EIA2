@@ -55,7 +55,7 @@ var Aufgabe4;
             childNodeHTML += "</select>";
             childNodeHTML += "<br>";
             childNodeHTML += "<h3>Baumstaender</h3>";
-            childNodeHTML += "<select name='Select' id='holders'>";
+            childNodeHTML += "<select name='Select' id='stands'>";
             for (let i = 0; i < Aufgabe4_1.stand.length; i++) {
                 childNodeHTML += "<option value='" + i + Aufgabe4_1.stand[i].name + "'>" + Aufgabe4_1.stand[i].name + "</option>";
             }
