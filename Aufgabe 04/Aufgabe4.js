@@ -191,9 +191,9 @@ var Aufgabe4;
         function checkInputs() {
             console.log("Error");
             if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || name == "" || adress == "")
-                document.getElementById("buttonCheck").innerHTML = "F�llen Sie die Felder aus!";
+                document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!";
             else {
-                document.getElementById("buttonCheck").innerHTML = "";
+                document.getElementById("check").innerHTML = "";
             }
         }
     })(Aufgabe4 || (Aufgabe4 = {}));
