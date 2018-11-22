@@ -193,7 +193,7 @@ var Aufgabe4;
             if (treePrice == 0 || ballPrice == 0 || candlePrice == 0 || tinselPrice == 0 || standPrice == 0 || deliveryPrice == 0 || name == "" || adress == "")
                 document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!";
             else {
-                document.getElementById("check").innerHTML = "";
+                document.getElementById("check").innerHTML = "Bestellung m�glich";
             }
         }
     })(Aufgabe4 || (Aufgabe4 = {}));
