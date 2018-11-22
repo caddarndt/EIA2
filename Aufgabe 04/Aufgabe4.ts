@@ -37,7 +37,7 @@ let adress: string = "";
         let childNodeHTML: string;
         
         childNodeHTML = "<h3>Baumart</h3>";
-        childNodeHTML += "<select name='Select' id='tree'>";
+        childNodeHTML += "<select name='Select' id='trees'>";
         for (let i: number = 0; i < tree.length; i++) {
             childNodeHTML += "<option value='" + i + tree[i].name + "'>" + tree[i].name + "</option>";
         }

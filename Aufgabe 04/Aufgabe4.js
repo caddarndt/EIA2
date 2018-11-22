@@ -27,7 +27,7 @@ var Aufgabe4;
             let node = document.getElementById("fieldset");
             let childNodeHTML;
             childNodeHTML = "<h3>Baumart</h3>";
-            childNodeHTML += "<select name='Select' id='tree'>";
+            childNodeHTML += "<select name='Select' id='trees'>";
             for (let i = 0; i < Aufgabe4_1.tree.length; i++) {
                 childNodeHTML += "<option value='" + i + Aufgabe4_1.tree[i].name + "'>" + Aufgabe4_1.tree[i].name + "</option>";
             }
