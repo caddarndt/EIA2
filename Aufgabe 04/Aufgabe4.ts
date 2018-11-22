@@ -36,6 +36,7 @@ let adress: string = "";
         let node: HTMLElement = document.getElementById("fieldset");
         let childNodeHTML: string;
         
+        childNodeHTML += "</select>";
         childNodeHTML = "<h3>Baumart</h3>";
         childNodeHTML += "<select name='Select' id='trees'>";
         for (let i: number = 0; i < tree.length; i++) {
