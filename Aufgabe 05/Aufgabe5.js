@@ -156,13 +156,13 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Kerzen</h3>";
-        childNodeHTML += "<select name=Select id=candles>";
+        childNodeHTML += "<select name=Select id=candles1>";
         for (let i = 0; i < (Aufgabe5.data["candle"].length); i++) {
             childNodeHTML += "<option value=" + i + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro>" + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<select name=Select id=candleNum>";
+        childNodeHTML += "<select name=Select id=candlenum>";
         for (let i = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
@@ -174,7 +174,7 @@ var Aufgabe5;
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<select name=Select id=candleNum2>";
+        childNodeHTML += "<select name=Select id=candlenum2>";
         for (let i = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
@@ -186,7 +186,7 @@ var Aufgabe5;
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        childNodeHTML += "<select name=Select id=candleNum3>";
+        childNodeHTML += "<select name=Select id=candlenum3>";
         for (let i = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
@@ -418,8 +418,8 @@ var Aufgabe5;
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        if (target.id == "candles") {
-            let node = document.getElementById("candle");
+        if (target.id == "candles1") {
+            let node = document.getElementById("candle1");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
             priceCandle = (Aufgabe5.data["candle"][priceIndex].price);

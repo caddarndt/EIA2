@@ -194,14 +194,14 @@ function createShop(): void {
 
 
         childNodeHTML += "<h3>Kerzen</h3>";
-        childNodeHTML += "<select name=Select id=candles>";
+        childNodeHTML += "<select name=Select id=candles1>";
         for (let i: number = 0; i < (data["candle"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["candle"][i].name) + " " + (data["candle"][i].price) + " Euro>" + (data["candle"][i].name) + " " + (data["candle"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
 
-        childNodeHTML += "<select name=Select id=candleNum>";
+        childNodeHTML += "<select name=Select id=candlenum>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
@@ -217,7 +217,7 @@ function createShop(): void {
         childNodeHTML += "<br>";
 
    
-        childNodeHTML += "<select name=Select id=candleNum2>";
+        childNodeHTML += "<select name=Select id=candlenum2>";
         for (let i: number = 0; i < 100; i++) {
 
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
@@ -232,7 +232,7 @@ function createShop(): void {
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
 
-        childNodeHTML += "<select name=Select id=candleNum3>";
+        childNodeHTML += "<select name=Select id=candlenum3>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
@@ -491,8 +491,8 @@ function createShop(): void {
             node.innerHTML = childNodeHTML;
         }
 
-        if (target.id == "candles") {
-            let node: HTMLElement = document.getElementById("candle");
+        if (target.id == "candles1") {
+            let node: HTMLElement = document.getElementById("candle1");
             let value: string = target.value;
             let priceIndex: number = parseInt(value.substr(0, 1));
             priceCandle = (data["candle"][priceIndex].price);
