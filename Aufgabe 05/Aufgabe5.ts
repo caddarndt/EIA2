@@ -73,7 +73,7 @@ function createShop(): void {
         childNodeHTML += "<select name=Select id=trees>";
         for (let i: number = 0; i < (data["tree"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["tree"][i].name) + " " + (data["tree"][i].price) + " Euro>" + (data["tree"][i].name) + " " + (data["tree"][i].price) + " Euro</option>";
-        }
+        } 
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
     
