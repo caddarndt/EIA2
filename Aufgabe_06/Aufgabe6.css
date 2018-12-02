@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+#fieldset {
+	width: 55%;
+	float: left;
+	margin-right: 5%;
+	border: none;
+	font-size: 0.8em
+}
+
+#cart {
+	width: 25%;
+	background-color: grey;
+	position: absolute;
+	right: 50px;
+	padding: 20px;
+	font-size: 0.8em
+}
+
+button {
+	margin: 2%;
+}
+
+select {
+	margin: 0.5%;
+}
