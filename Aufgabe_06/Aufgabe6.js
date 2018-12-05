@@ -1,5 +1,5 @@
-var Aufgabe5;
-(function (Aufgabe5) {
+var Aufgabe6;
+(function (Aufgabe6) {
     /*
     Aufgabe: Aufgabe 5
     Name: Catherina Arndt
@@ -52,15 +52,15 @@ var Aufgabe5;
         let childNodeHTML;
         childNodeHTML = "<h3>Baumart</h3>";
         childNodeHTML += "<select name=Select id=trees>";
-        for (let i = 0; i < (Aufgabe5.data["tree"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["tree"][i].name) + " " + (Aufgabe5.data["tree"][i].price) + " Euro>" + (Aufgabe5.data["tree"][i].name) + " " + (Aufgabe5.data["tree"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["tree"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["tree"][i].name) + " " + (Aufgabe6.data["tree"][i].price) + " Euro>" + (Aufgabe6.data["tree"][i].name) + " " + (Aufgabe6.data["tree"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Kugeln</h3>";
         childNodeHTML += "<select name=Select id=kugeln>";
-        for (let i = 0; i < (Aufgabe5.data["christmasBall"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro>" + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["christmasBall"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro>" + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -71,8 +71,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=kugeln2>";
-        for (let i = 0; i < (Aufgabe5.data["christmasBall"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro>" + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["christmasBall"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro>" + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -83,8 +83,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=kugeln3>";
-        for (let i = 0; i < (Aufgabe5.data["christmasBall"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro>" + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["christmasBall"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro>" + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -95,8 +95,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=kugeln4>";
-        for (let i = 0; i < (Aufgabe5.data["christmasBall"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro>" + (Aufgabe5.data["christmasBall"][i].name) + " " + (Aufgabe5.data["christmasBall"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["christmasBall"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro>" + (Aufgabe6.data["christmasBall"][i].name) + " " + (Aufgabe6.data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -108,8 +108,8 @@ var Aufgabe5;
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Lametta</h3>";
         childNodeHTML += "<select name=Select id=lam>";
-        for (let i = 0; i < (Aufgabe5.data["tinsel"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro>" + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["tinsel"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro>" + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -120,8 +120,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=lam2>";
-        for (let i = 0; i < (Aufgabe5.data["tinsel"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro>" + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["tinsel"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro>" + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -132,8 +132,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=lam3>";
-        for (let i = 0; i < (Aufgabe5.data["tinsel"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro>" + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["tinsel"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro>" + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -144,8 +144,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=lam4>";
-        for (let i = 0; i < (Aufgabe5.data["tinsel"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro>" + (Aufgabe5.data["tinsel"][i].name) + " " + (Aufgabe5.data["tinsel"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["tinsel"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro>" + (Aufgabe6.data["tinsel"][i].name) + " " + (Aufgabe6.data["tinsel"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -157,8 +157,8 @@ var Aufgabe5;
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Kerzen</h3>";
         childNodeHTML += "<select name=Select id=candles1>";
-        for (let i = 0; i < (Aufgabe5.data["candle"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro>" + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["candle"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro>" + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -169,8 +169,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=candles2>";
-        for (let i = 0; i < (Aufgabe5.data["candle"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro>" + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["candle"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro>" + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -181,8 +181,8 @@ var Aufgabe5;
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<select name=Select id=candles3>";
-        for (let i = 0; i < (Aufgabe5.data["candle"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro>" + (Aufgabe5.data["candle"][i].name) + " " + (Aufgabe5.data["candle"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["candle"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro>" + (Aufgabe6.data["candle"][i].name) + " " + (Aufgabe6.data["candle"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
@@ -194,15 +194,15 @@ var Aufgabe5;
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Baumstaender</h3>";
         childNodeHTML += "<select name='Select' id='stands'>";
-        for (let i = 0; i < (Aufgabe5.data["stand"].length); i++) {
-            childNodeHTML += "<option value=" + i + (Aufgabe5.data["stand"][i].name) + " " + (Aufgabe5.data["stand"][i].price) + " Euro>" + (Aufgabe5.data["stand"][i].name) + " " + (Aufgabe5.data["stand"][i].price) + " Euro</option>";
+        for (let i = 0; i < (Aufgabe6.data["stand"].length); i++) {
+            childNodeHTML += "<option value=" + i + (Aufgabe6.data["stand"][i].name) + " " + (Aufgabe6.data["stand"][i].price) + " Euro>" + (Aufgabe6.data["stand"][i].name) + " " + (Aufgabe6.data["stand"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Lieferoption</h3>";
-        for (let i = 0; i < (Aufgabe5.data["delivery"].length); i++) {
-            childNodeHTML += "<input type=radio name=Radiogroup value=" + i + (Aufgabe5.data["delivery"][i].name) + " " + (Aufgabe5.data["delivery"][i].price) + " Euro  id=radio" + i + " />";
-            childNodeHTML += "<label" + i + ">" + (Aufgabe5.data["delivery"][i].name) + " " + (Aufgabe5.data["delivery"][i].price) + " Euro</label>";
+        for (let i = 0; i < (Aufgabe6.data["delivery"].length); i++) {
+            childNodeHTML += "<input type=radio name=Radiogroup value=" + i + (Aufgabe6.data["delivery"][i].name) + " " + (Aufgabe6.data["delivery"][i].price) + " Euro  id=radio" + i + " />";
+            childNodeHTML += "<label" + i + ">" + (Aufgabe6.data["delivery"][i].name) + " " + (Aufgabe6.data["delivery"][i].price) + " Euro</label>";
         }
         childNodeHTML += "<br>";
         childNodeHTML += "<h3>Lieferinformationen</h3>";
@@ -218,7 +218,7 @@ var Aufgabe5;
             let node = document.getElementById("tree");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceTree = (Aufgabe5.data["tree"][priceIndex].price);
+            priceTree = (Aufgabe6.data["tree"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -230,7 +230,7 @@ var Aufgabe5;
             let node = document.getElementById("ball");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceBalls = (Aufgabe5.data["christmasBall"][priceIndex].price);
+            priceBalls = (Aufgabe6.data["christmasBall"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -242,7 +242,7 @@ var Aufgabe5;
             let node = document.getElementById("ball2");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceBalls2 = (Aufgabe5.data["christmasBall"][priceIndex].price);
+            priceBalls2 = (Aufgabe6.data["christmasBall"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -254,7 +254,7 @@ var Aufgabe5;
             let node = document.getElementById("ball3");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceBalls3 = (Aufgabe5.data["christmasBall"][priceIndex].price);
+            priceBalls3 = (Aufgabe6.data["christmasBall"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -266,7 +266,7 @@ var Aufgabe5;
             let node = document.getElementById("ball4");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceBalls3 = (Aufgabe5.data["christmasBall"][priceIndex].price);
+            priceBalls3 = (Aufgabe6.data["christmasBall"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -326,7 +326,7 @@ var Aufgabe5;
             let node = document.getElementById("tinsels");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceTinsel = (Aufgabe5.data["tinsel"][priceIndex].price);
+            priceTinsel = (Aufgabe6.data["tinsel"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -338,7 +338,7 @@ var Aufgabe5;
             let node = document.getElementById("tinsel2");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceTinsel2 = (Aufgabe5.data["tinsel"][priceIndex].price);
+            priceTinsel2 = (Aufgabe6.data["tinsel"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -350,7 +350,7 @@ var Aufgabe5;
             let node = document.getElementById("tinsel3");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceTinsel3 = (Aufgabe5.data["tinsel"][priceIndex].price);
+            priceTinsel3 = (Aufgabe6.data["tinsel"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -362,7 +362,7 @@ var Aufgabe5;
             let node = document.getElementById("tinsel4");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceTinsel3 = (Aufgabe5.data["tinsel"][priceIndex].price);
+            priceTinsel3 = (Aufgabe6.data["tinsel"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -422,7 +422,7 @@ var Aufgabe5;
             let node = document.getElementById("candle1");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceCandle = (Aufgabe5.data["candle"][priceIndex].price);
+            priceCandle = (Aufgabe6.data["candle"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -434,7 +434,7 @@ var Aufgabe5;
             let node = document.getElementById("candle2");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceCandle2 = (Aufgabe5.data["candle"][priceIndex].price);
+            priceCandle2 = (Aufgabe6.data["candle"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -446,7 +446,7 @@ var Aufgabe5;
             let node = document.getElementById("candle3");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceCandle3 = (Aufgabe5.data["candle"][priceIndex].price);
+            priceCandle3 = (Aufgabe6.data["candle"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -494,7 +494,7 @@ var Aufgabe5;
             let node = document.getElementById("delivery");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceDelivery = (Aufgabe5.data["delivery"][priceIndex].price);
+            priceDelivery = (Aufgabe6.data["delivery"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -506,7 +506,7 @@ var Aufgabe5;
             let node = document.getElementById("stand");
             let value = target.value;
             let priceIndex = parseInt(value.substr(0, 1));
-            priceStand = (Aufgabe5.data["stand"][priceIndex].price);
+            priceStand = (Aufgabe6.data["stand"][priceIndex].price);
             let childNodeHTML;
             childNodeHTML = "";
             childNodeHTML += "<a>";
@@ -552,5 +552,5 @@ var Aufgabe5;
         }
     }
     main();
-})(Aufgabe5 || (Aufgabe5 = {}));
+})(Aufgabe6 || (Aufgabe6 = {}));
 //# sourceMappingURL=Aufgabe6.js.map
