@@ -22,4 +22,4 @@ var L06_SendData;
         _response.end(); //beendet die schleife der _response
     }
 })(L06_SendData || (L06_SendData = {}));
-//# sourceMappingURL=Server.js.map
+//# sourceMappingURL=Server6.js.map
