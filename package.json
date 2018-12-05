@@ -5,7 +5,7 @@
 	"author": "Cata",
 	"main": "Server6.js",
 	"scripts": {
-		"start": "node Aufgabe_06/Server.js"
+		"start": "node Aufgabe_06/Server6.js"
 	},
 	"engines": {
 		"node": "8.10.0"
