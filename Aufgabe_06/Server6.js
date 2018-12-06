@@ -15,7 +15,11 @@ var L06_SendData;
         console.log("Listening"); //Consolelog "Listening" wird ausgegeben
     }
     function handleRequest(_request, _response) {
-        //console.log("I hear voices")      // gibt Consolelog "I hear voices!" aus
+        console.log(_request.url);
+        console.log("request");
+        _response.setHeader("content-type", "text/html; charset=utf-8"); //setzt in den HTML header "content-type" und text/html; charset=utf-8
+        _response.setHeader("Access-Control-Allow-Origin", "*"); //Access-Control-Allow-Origin wird auch in den Header gesetzt, damit die antwort des Codes mit dem Nutzer geteilt wird.
+        // _response.write(_request.url);          //gibt bei _response.write eine angefragte URL aus             
         console.log(_request.url);
         let url = Url.parse(_request.url, true).query;
         console.log(url);
