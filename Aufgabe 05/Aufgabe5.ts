@@ -22,7 +22,7 @@ function changeEventListener(_event: Event): void {
 }
 
     
-//* Variablen für die Erzeugung der Inhalte *//   
+//* Variablen fï¿½r die Erzeugung der Inhalte *//   
     
 let priceTree: number = 0;
     
@@ -630,11 +630,25 @@ function createShop(): void {
 function checkInputs(): void {
         console.log("Error");
         if (priceBalls == 0 || priceTinsel == 0 || priceCandle == 0 || priceStand == 0 || priceDelivery == 0 || name == "" || adress == "")
-         document.getElementById("check").innerHTML = "Füllen Sie die Felder aus!"; 
+         document.getElementById("check").innerHTML = "Fï¿½llen Sie die Felder aus!"; 
         else {
-            document.getElementById("check").innerHTML = "Bestellung möglich";
+            document.getElementById("check").innerHTML = "Bestellung mï¿½glich";
         }
     }    
+    
+        function sendRequestWithCustomData(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        }
 
   
 main();
