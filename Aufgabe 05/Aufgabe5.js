@@ -12,6 +12,7 @@ var Aufgabe5;
     function main() {
         document.addEventListener("DOMContentLoaded", createShop);
         document.addEventListener("DOMContentLoaded", changeEventListener);
+        setupAsyncForm();
     }
     function changeEventListener(_event) {
         let fieldset = document.getElementById("fieldset");
@@ -573,6 +574,5 @@ var Aufgabe5;
         sendRequestWithCustomData(color);
     }
     main();
-    setupAsyncForm();
 })(Aufgabe5 || (Aufgabe5 = {}));
 //# sourceMappingURL=Aufgabe5.js.map

@@ -14,6 +14,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 function main(): void {
     document.addEventListener("DOMContentLoaded", createShop);
     document.addEventListener("DOMContentLoaded", changeEventListener);
+    setupAsyncForm()
 }
     
 function changeEventListener(_event: Event): void {
@@ -618,7 +619,7 @@ function createShop(): void {
         }
        
         let node: HTMLElement = document.getElementById("price");   
-        let childNodeHTML: string;
+            let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += (priceTree + (priceBalls * ballsNumber) + (priceBalls2 * ballsNumber2) + (priceBalls3 * ballsNumber3) + (priceBalls4 * ballsNumber4) + (priceTinsel * tinselNumber) + (priceTinsel2 * tinselNumber2) + (priceTinsel3 * tinselNumber3) + (priceTinsel4 * tinselNumber4) + (priceCandle * candlesNumber) + (priceCandle2 * candlesNumber2) + (priceCandle3 * candlesNumber3) + priceStand + priceDelivery);
@@ -664,7 +665,6 @@ function createShop(): void {
 
   
 main();
-setupAsyncForm();
     
 }   
     
