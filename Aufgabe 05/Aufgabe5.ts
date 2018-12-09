@@ -14,7 +14,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 function main(): void {
     document.addEventListener("DOMContentLoaded", createShop);
     document.addEventListener("DOMContentLoaded", changeEventListener);
-    setupAsyncForm()
+    setupAsyncForm();
 }
     
 function changeEventListener(_event: Event): void {
@@ -661,6 +661,7 @@ function createShop(): void {
     function handleClickOnAsync(_event: Event): void {
     let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
     sendRequestWithCustomData(color);
+    
     }
 
   
