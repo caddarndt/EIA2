@@ -638,30 +638,30 @@ function createShop(): void {
     }    
     
     
-    let urlToSend: string = "";
-    
     function setupAsyncForm(): void {
-        let button: Element = document.getElementById("check");
-        button.addEventListener("click", sendRequestWithCustomData);
+        let button: Element = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
     }
     
-    function sendRequestWithCustomData(_e: MouseEvent): void {
+      function handleClickOnAsync(_event: Event): void {
+        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        sendRequestWithCustomData(color);
+    }
+
+    function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", "https://eia-cata.herokuapp.com" + "/?" + urlToSend, true);
+        xhr.open("GET", "https://eia-cata.herokuapp.com/" + "?article=" + _color, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
 
     function handleStateChange(_event: ProgressEvent): void {
-        var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
-            alert("response: " + xhr.response);
-            
         }
     }
-
 
   
 main();
