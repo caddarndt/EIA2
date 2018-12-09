@@ -642,11 +642,6 @@ function createShop(): void {
         let button: Element = document.querySelector("[type=button]");
         button.addEventListener("click", handleClickOnAsync);
     }
-    
-      function handleClickOnAsync(_event: Event): void {
-        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-        sendRequestWithCustomData(color);
-    }
 
     function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
@@ -661,6 +656,11 @@ function createShop(): void {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             alert("response: " + xhr.response);
         }
+    }
+    
+        function handleClickOnAsync(_event: Event): void {
+        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        sendRequestWithCustomData(color);
     }
 
   
