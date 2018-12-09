@@ -556,6 +556,10 @@ var Aufgabe5;
         let button = document.querySelector("[type=button]");
         button.addEventListener("click", handleClickOnAsync);
     }
+    function handleClickOnAsync(_event) {
+        let color = document.querySelector(":checked").value;
+        sendRequestWithCustomData(color);
+    }
     function sendRequestWithCustomData(_color) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", "https://eia-cata.herokuapp.com/" + "?article=" + _color, true);
@@ -568,10 +572,6 @@ var Aufgabe5;
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             alert("response: " + xhr.response);
         }
-    }
-    function handleClickOnAsync(_event) {
-        let color = document.querySelector(":checked").value;
-        sendRequestWithCustomData(color);
     }
     main();
 })(Aufgabe5 || (Aufgabe5 = {}));

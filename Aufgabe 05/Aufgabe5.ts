@@ -642,7 +642,12 @@ function createShop(): void {
         let button: Element = document.querySelector("[type=button]");
         button.addEventListener("click", handleClickOnAsync);
     }
-
+    
+    function handleClickOnAsync(_event: Event): void {
+        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        sendRequestWithCustomData(color);
+    }
+    
     function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         xhr.open("GET", "https://eia-cata.herokuapp.com/" + "?article=" + _color, true);
@@ -657,12 +662,7 @@ function createShop(): void {
             alert("response: " + xhr.response);
         }
     }
-    
-    function handleClickOnAsync(_event: Event): void {
-    let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-    sendRequestWithCustomData(color);
-    
-    }
+
 
   
 main();
