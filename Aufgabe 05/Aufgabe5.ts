@@ -637,47 +637,31 @@ function createShop(): void {
         }
     }    
     
- let web: string = "https://eia-cata.herokuapp.com/";
+    
+    let urlToSend: string = "";
+    
     function setupAsyncForm(): void {
-        let button: Element = document.querySelector("[type=button]");
-        button.addEventListener("click", handleClickOnAsync);
+        let button: Element = document.getElementById("check");
+        button.addEventListener("click", sendRequestWithCustomData);
     }
-
-    function handleClickOnAsync(_event: Event): void {
-        let articles: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
-        let show: string[] = [];
-        for (let i: number = 0; i < articles.length ; i++) {
-            let article: HTMLInputElement = articles[i];
-            if (article.checked == true) {
-                let color: string = article.name + " " + article.getAttribute("price") + " Euro";
-                sendRequestWithCustomData(color);
-                show.push(color);
-            }
-            else {
-                if (Number(article.value) > 0) {
-                    let color: string = article.name + " " + (Number(article.getAttribute("price")) * Number(article.value)) + " Euro";
-                    sendRequestWithCustomData(color);
-                    show.push(color);
-                }
-            }
-        }
-        alert(show);
-    }
-
-    function sendRequestWithCustomData(_color: string): void {
+    
+    function sendRequestWithCustomData(_e: MouseEvent): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", web + "?article=" + _color, true);
+        xhr.open("GET", "https://eia-cata.herokuapp.com" + "/?" + urlToSend, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
 
     function handleStateChange(_event: ProgressEvent): void {
-        var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
+            alert("response: " + xhr.response);
+            
         }
     }
+
 
   
 main();
