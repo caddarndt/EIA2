@@ -14,6 +14,7 @@ Er wurde nicht kopiert und auch nicht diktiert.
 function main(): void {
     document.addEventListener("DOMContentLoaded", createShop);
     document.addEventListener("DOMContentLoaded", changeEventListener);
+    setupAsyncForm();
 }
     
 function changeEventListener(_event: Event): void {
@@ -617,8 +618,8 @@ function createShop(): void {
             node.innerHTML = childNodeHTML;
         }
        
-        let node: HTMLElement = document.getElementById("price");
-            let childNodeHTML: string;
+        let node: HTMLElement = document.getElementById("price");   
+        let childNodeHTML: string;
             childNodeHTML = "";
             childNodeHTML += "<a>";
             childNodeHTML += (priceTree + (priceBalls * ballsNumber) + (priceBalls2 * ballsNumber2) + (priceBalls3 * ballsNumber3) + (priceBalls4 * ballsNumber4) + (priceTinsel * tinselNumber) + (priceTinsel2 * tinselNumber2) + (priceTinsel3 * tinselNumber3) + (priceTinsel4 * tinselNumber4) + (priceCandle * candlesNumber) + (priceCandle2 * candlesNumber2) + (priceCandle3 * candlesNumber3) + priceStand + priceDelivery);
@@ -627,7 +628,7 @@ function createShop(): void {
             node.innerHTML = childNodeHTML;
         }
     
-function checkInputs(): void {
+    function checkInputs(): void {
         console.log("Error");
         if (priceBalls == 0 || priceTinsel == 0 || priceCandle == 0 || priceStand == 0 || priceDelivery == 0 || name == "" || adress == "")
          document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!"; 
@@ -636,9 +637,36 @@ function checkInputs(): void {
         }
     }    
     
-        function sendRequestWithCustomData(_color: string): void {
+ let web: string = "https://eia-cata.herokuapp.com/";
+    function setupAsyncForm(): void {
+        let button: Element = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+
+    function handleClickOnAsync(_event: Event): void {
+        let articles: NodeListOf<HTMLInputElement> = document.getElementsByTagName("input");
+        let show: string[] = [];
+        for (let i: number = 0; i < articles.length ; i++) {
+            let article: HTMLInputElement = articles[i];
+            if (article.checked == true) {
+                let color: string = article.name + " " + article.getAttribute("price") + " Euro";
+                sendRequestWithCustomData(color);
+                show.push(color);
+            }
+            else {
+                if (Number(article.value) > 0) {
+                    let color: string = article.name + " " + (Number(article.getAttribute("price")) * Number(article.value)) + " Euro";
+                    sendRequestWithCustomData(color);
+                    show.push(color);
+                }
+            }
+        }
+        alert(show);
+    }
+
+    function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?color=" + _color, true);
+        xhr.open("GET", web + "?article=" + _color, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -649,6 +677,7 @@ function checkInputs(): void {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         }
+    }
 
   
 main();

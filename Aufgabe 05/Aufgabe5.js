@@ -12,6 +12,7 @@ var Aufgabe5;
     function main() {
         document.addEventListener("DOMContentLoaded", createShop);
         document.addEventListener("DOMContentLoaded", changeEventListener);
+        setupAsyncForm();
     }
     function changeEventListener(_event) {
         let fieldset = document.getElementById("fieldset");
@@ -549,6 +550,44 @@ var Aufgabe5;
             document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!";
         else {
             document.getElementById("check").innerHTML = "Bestellung m�glich";
+        }
+    }
+    let web = "https://eia-cata.herokuapp.com/";
+    function setupAsyncForm() {
+        let button = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+    function handleClickOnAsync(_event) {
+        let articles = document.getElementsByTagName("input");
+        let show = [];
+        for (let i = 0; i < articles.length; i++) {
+            let article = articles[i];
+            if (article.checked == true) {
+                let color = article.name + " " + article.getAttribute("price") + " Euro";
+                sendRequestWithCustomData(color);
+                show.push(color);
+            }
+            else {
+                if (Number(article.value) > 0) {
+                    let color = article.name + " " + (Number(article.getAttribute("price")) * Number(article.value)) + " Euro";
+                    sendRequestWithCustomData(color);
+                    show.push(color);
+                }
+            }
+        }
+        alert(show);
+    }
+    function sendRequestWithCustomData(_color) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", web + "?article=" + _color, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+    function handleStateChange(_event) {
+        var xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
         }
     }
     main();
