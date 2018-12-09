@@ -14,7 +14,6 @@ Er wurde nicht kopiert und auch nicht diktiert.
 function main(): void {
     document.addEventListener("DOMContentLoaded", createShop);
     document.addEventListener("DOMContentLoaded", changeEventListener);
-    setupAsyncForm();
 }
     
 function changeEventListener(_event: Event): void {
@@ -665,6 +664,7 @@ function createShop(): void {
 
   
 main();
+setupAsyncForm();
     
 }   
     
