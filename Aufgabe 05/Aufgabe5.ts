@@ -658,9 +658,9 @@ function createShop(): void {
         }
     }
     
-        function handleClickOnAsync(_event: Event): void {
-        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-        sendRequestWithCustomData(color);
+    function handleClickOnAsync(_event: Event): void {
+    let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+    sendRequestWithCustomData(color);
     }
 
   
