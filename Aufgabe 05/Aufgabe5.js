@@ -557,7 +557,7 @@ var Aufgabe5;
         button.addEventListener("click", handleClickOnAsync);
     }
     function handleClickOnAsync(_event) {
-        let color = document.querySelector(":checked").value;
+        let color = document.querySelector("#cart").value;
         sendRequestWithCustomData(color);
     }
     function sendRequestWithCustomData(_color) {
