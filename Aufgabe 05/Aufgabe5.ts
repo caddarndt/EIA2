@@ -643,9 +643,11 @@ function createShop(): void {
         button.addEventListener("click", handleClickOnAsync);
     }
     
-    function handleClickOnAsync(_event: Event): void {
-        let color: string = (<HTMLInputElement>document.querySelector("#cart")).value;
-        sendRequestWithCustomData(color);
+       function handleClickOnAsync(_event: Event): void {
+        let submitcart: HTMLElement = document.getElementById("submit");
+        let name: string = (<HTMLInputElement>document.querySelector("#cart")).innerText;
+        sendRequestWithCustomData(name);
+        alert(name);
     }
     
     function sendRequestWithCustomData(_color: string): void {
