@@ -6,22 +6,20 @@ var Aufgabe5;
     Matrikel: 259418
     Datum: 22.11.2018
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
-    Er wurde nicht kopiert und auch nicht diktiert.
+    Er wurde nicht kopiert  anicht diktiert.
     */
     //* Hauptfunktion *//
+    main();
     function main() {
         document.addEventListener("DOMContentLoaded", createShop);
         document.addEventListener("DOMContentLoaded", changeEventListener);
-        //setupAsyncForm();
+        document.addEventListener("DOMContentLoaded", setupAsyncForm);
     }
-    window.onload = function () {
-        setupAsyncForm();
-    };
     function changeEventListener(_event) {
         let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
     }
-    //* Variablen f�r die Erzeugung der Inhalte *//   
+    //* Variablen f�r die Erzeugung der Inhalte *//     
     let priceTree = 0;
     let priceBalls = 0;
     let priceBalls2 = 0;
@@ -49,7 +47,7 @@ var Aufgabe5;
     let candlesNumber3 = 0;
     let name = "";
     let adress = "";
-    //* Erzeugung der Inhalte *//    
+    //* Erzeugung der Inhalte *//      
     function createShop() {
         let node = document.getElementById("fieldset");
         document.getElementById("check").addEventListener("click", checkInputs);
@@ -215,7 +213,7 @@ var Aufgabe5;
         childNodeHTML += "<br>";
         node.innerHTML += childNodeHTML;
     }
-    //* Handle Change *//   
+    //* Handle Change *//     
     function handleChange(_event) {
         let target = _event.target;
         if (target.id == "trees") {
@@ -578,6 +576,5 @@ var Aufgabe5;
             console.log("response: " + xhr.response);
         }
     }
-    main();
 })(Aufgabe5 || (Aufgabe5 = {}));
 //# sourceMappingURL=Aufgabe5.js.map

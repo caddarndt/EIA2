@@ -1,87 +1,82 @@
 namespace Aufgabe5 {
 
-/*
-Aufgabe: Aufgabe 5
-Name: Catherina Arndt
-Matrikel: 259418
-Datum: 22.11.2018
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
-Er wurde nicht kopiert und auch nicht diktiert.
-*/   
+    /*
+    Aufgabe: Aufgabe 5
+    Name: Catherina Arndt
+    Matrikel: 259418
+    Datum: 22.11.2018
+    Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
+    Er wurde nicht kopiert  anicht diktiert.
+    */     
+    //* Hauptfunktion *//
+
+    main();
     
-//* Hauptfunktion *//
-    
-function main(): void {
-    document.addEventListener("DOMContentLoaded", createShop);
-    document.addEventListener("DOMContentLoaded", changeEventListener);
-    //setupAsyncForm();
-}
-    
-    window.onload = function() {
-    setupAsyncForm();
-}
-    
-function changeEventListener(_event: Event): void {
+    function main(): void {
+        document.addEventListener("DOMContentLoaded", createShop);
+        document.addEventListener("DOMContentLoaded", changeEventListener);
+        document.addEventListener("DOMContentLoaded", setupAsyncForm);
+    }
+
+    function changeEventListener(_event: Event): void {
         let fieldset: HTMLElement = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
-}
-
-    
-//* Variablen f�r die Erzeugung der Inhalte *//   
-    
-let priceTree: number = 0;
-    
-let priceBalls: number = 0;
-let priceBalls2: number = 0;
-let priceBalls3: number = 0;
-let priceBalls4: number = 0;
-    
-let priceTinsel: number = 0;
-let priceTinsel2: number = 0;
-let priceTinsel3: number = 0;
-let priceTinsel4: number = 0;
-    
-let priceCandle: number = 0;
-let priceCandle2: number = 0;
-let priceCandle3: number = 0;
-    
-let priceStand: number = 0;
-let priceDelivery: number = 0;
-    
-let ballsNumber: number = 0;
-let ballsNumber2: number = 0;
-let ballsNumber3: number = 0;
-let ballsNumber4: number = 0;
-    
-let tinselNumber: number = 0;
-let tinselNumber2: number = 0;
-let tinselNumber3: number = 0;
-let tinselNumber4: number = 0;
-    
-let candlesNumber: number = 0;
-let candlesNumber2: number = 0;
-let candlesNumber3: number = 0;
-    
-let name: string = "";
-let adress: string = "";
+    }
 
 
-//* Erzeugung der Inhalte *//    
-    
-function createShop(): void {
-             
+    //* Variablen f�r die Erzeugung der Inhalte *//     
+    let priceTree: number = 0;
+
+    let priceBalls: number = 0;
+    let priceBalls2: number = 0;
+    let priceBalls3: number = 0;
+    let priceBalls4: number = 0;
+
+    let priceTinsel: number = 0;
+    let priceTinsel2: number = 0;
+    let priceTinsel3: number = 0;
+    let priceTinsel4: number = 0;
+
+    let priceCandle: number = 0;
+    let priceCandle2: number = 0;
+    let priceCandle3: number = 0;
+
+    let priceStand: number = 0;
+    let priceDelivery: number = 0;
+
+    let ballsNumber: number = 0;
+    let ballsNumber2: number = 0;
+    let ballsNumber3: number = 0;
+    let ballsNumber4: number = 0;
+
+    let tinselNumber: number = 0;
+    let tinselNumber2: number = 0;
+    let tinselNumber3: number = 0;
+    let tinselNumber4: number = 0;
+
+    let candlesNumber: number = 0;
+    let candlesNumber2: number = 0;
+    let candlesNumber3: number = 0;
+
+    let name: string = "";
+    let adress: string = "";
+
+
+    //* Erzeugung der Inhalte *//      
+    function createShop(): void {
+
         let node: HTMLElement = document.getElementById("fieldset");
         document.getElementById("check").addEventListener("click", checkInputs);
         let childNodeHTML: string;
-        
+
         childNodeHTML = "<h3>Baumart</h3>";
         childNodeHTML += "<select name=Select id=trees>";
         for (let i: number = 0; i < (data["tree"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["tree"][i].name) + " " + (data["tree"][i].price) + " Euro>" + (data["tree"][i].name) + " " + (data["tree"][i].price) + " Euro</option>";
-        } 
+        }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<h3>Kugeln</h3>";
         childNodeHTML += "<select name=Select id=kugeln>";
         for (let i: number = 0; i < (data["christmasBall"].length); i++) {
@@ -89,49 +84,49 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-  
+
         childNodeHTML += "<select name=Select id=ballsNum>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=kugeln2>";
         for (let i: number = 0; i < (data["christmasBall"].length); i++) {
-        childNodeHTML += "<option value=" + i + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro>" + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro</option>";
+            childNodeHTML += "<option value=" + i + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro>" + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        
+
         childNodeHTML += "<select name=Select id=ballsNum2>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=kugeln3>";
         for (let i: number = 0; i < (data["christmasBall"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro>" + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        
+
         childNodeHTML += "<select name=Select id=ballsNum3>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=kugeln4>";
         for (let i: number = 0; i < (data["christmasBall"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro>" + (data["christmasBall"][i].name) + " " + (data["christmasBall"][i].price) + " Euro</option>";
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        
+
         childNodeHTML += "<select name=Select id=ballsNum4>";
         for (let i: number = 0; i < 100; i++) {
             childNodeHTML += "<option value=*" + i + ">" + i + "</option>";
@@ -154,7 +149,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-        
+
         childNodeHTML += "<select name=Select id=lam2>";
         for (let i: number = 0; i < (data["tinsel"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro>" + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro</option>";
@@ -168,7 +163,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=lam3>";
         for (let i: number = 0; i < (data["tinsel"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro>" + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro</option>";
@@ -182,7 +177,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=lam4>";
         for (let i: number = 0; i < (data["tinsel"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro>" + (data["tinsel"][i].name) + " " + (data["tinsel"][i].price) + " Euro</option>";
@@ -212,7 +207,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=candles2>";
         for (let i: number = 0; i < (data["candle"].length); i++) {
 
@@ -221,7 +216,7 @@ function createShop(): void {
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
 
-   
+
         childNodeHTML += "<select name=Select id=candlenum2>";
         for (let i: number = 0; i < 100; i++) {
 
@@ -229,7 +224,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<select name=Select id=candles3>";
         for (let i: number = 0; i < (data["candle"].length); i++) {
             childNodeHTML += "<option value=" + i + (data["candle"][i].name) + " " + (data["candle"][i].price) + " Euro>" + (data["candle"][i].name) + " " + (data["candle"][i].price) + " Euro</option>";
@@ -243,7 +238,7 @@ function createShop(): void {
         }
         childNodeHTML += "</select>";
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<h3>Baumstaender</h3>";
         childNodeHTML += "<select name='Select' id='stands'>";
         for (let i: number = 0; i < (data["stand"].length); i++) {
@@ -258,22 +253,21 @@ function createShop(): void {
             childNodeHTML += "<label" + i + ">" + (data["delivery"][i].name) + " " + (data["delivery"][i].price) + " Euro</label>";
         }
         childNodeHTML += "<br>";
-    
+
         childNodeHTML += "<h3>Lieferinformationen</h3>";
         childNodeHTML += "<input id='names' type='text' name='Text' placeholder='Name' required/>";
         childNodeHTML += "<input id='adresses' type='text' name='Text' placeholder='Adresse' required/>";
         childNodeHTML += "<br>";
-    
+
         node.innerHTML += childNodeHTML;
-        }    
-    
-    
-//* Handle Change *//   
-    
+    }
+
+
+    //* Handle Change *//     
     function handleChange(_event: Event): void {
- 
+
         let target: HTMLInputElement = <HTMLInputElement>_event.target;
-     
+
         if (target.id == "trees") {
             let node: HTMLElement = document.getElementById("tree");
             let value: string = target.value;
@@ -286,7 +280,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-       
+
         if (target.id == "kugeln") {
             let node: HTMLElement = document.getElementById("ball");
             let value: string = target.value;
@@ -299,7 +293,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "kugeln2") {
             let node: HTMLElement = document.getElementById("ball2");
             let value: string = target.value;
@@ -312,7 +306,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "kugeln3") {
             let node: HTMLElement = document.getElementById("ball3");
             let value: string = target.value;
@@ -325,7 +319,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "kugeln4") {
             let node: HTMLElement = document.getElementById("ball4");
             let value: string = target.value;
@@ -351,7 +345,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "ballsNum2") {
             let node: HTMLElement = document.getElementById("ballNum2");
             let value: string = target.value;
@@ -377,7 +371,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "ballsNum4") {
             let node: HTMLElement = document.getElementById("ballNum4");
             let value: string = target.value;
@@ -390,7 +384,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-      
+
         if (target.id == "lam") {
             let node: HTMLElement = document.getElementById("tinsels");
             let value: string = target.value;
@@ -404,7 +398,7 @@ function createShop(): void {
             node.innerHTML = childNodeHTML;
         }
 
-        
+
         if (target.id == "lam2") {
             let node: HTMLElement = document.getElementById("tinsel2");
             let value: string = target.value;
@@ -417,7 +411,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "lam3") {
             let node: HTMLElement = document.getElementById("tinsel3");
             let value: string = target.value;
@@ -430,7 +424,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "lam4") {
             let node: HTMLElement = document.getElementById("tinsel4");
             let value: string = target.value;
@@ -443,7 +437,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "lamNum") {
             let node: HTMLElement = document.getElementById("tinselNum");
             let value: string = target.value;
@@ -469,7 +463,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "lamNum3") {
             let node: HTMLElement = document.getElementById("tinselNum3");
             let value: string = target.value;
@@ -482,7 +476,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "lamNum4") {
             let node: HTMLElement = document.getElementById("tinselNum4");
             let value: string = target.value;
@@ -521,7 +515,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "candles3") {
             let node: HTMLElement = document.getElementById("candle3");
             let value: string = target.value;
@@ -534,7 +528,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "candlenum") {
             let node: HTMLElement = document.getElementById("candleNum");
             let value: string = target.value;
@@ -547,7 +541,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "candlenum2") {
             let node: HTMLElement = document.getElementById("candleNum2");
             let value: string = target.value;
@@ -560,7 +554,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "candlenum3") {
             let node: HTMLElement = document.getElementById("candleNum3");
             let value: string = target.value;
@@ -573,7 +567,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.name == "Radiogroup") {
             let node: HTMLElement = document.getElementById("delivery");
             let value: string = target.value;
@@ -586,7 +580,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "stands") {
             let node: HTMLElement = document.getElementById("stand");
             let value: string = target.value;
@@ -599,7 +593,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "names") {
             let node: HTMLElement = document.getElementById("name");
             name = target.value;
@@ -610,7 +604,7 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-        
+
         if (target.id == "adresses") {
             let node: HTMLElement = document.getElementById("adress");
             adress = target.value;
@@ -621,39 +615,39 @@ function createShop(): void {
             childNodeHTML += "</a>";
             node.innerHTML = childNodeHTML;
         }
-       
-        let node: HTMLElement = document.getElementById("price");   
-            let childNodeHTML: string;
-            childNodeHTML = "";
-            childNodeHTML += "<a>";
-            childNodeHTML += (priceTree + (priceBalls * ballsNumber) + (priceBalls2 * ballsNumber2) + (priceBalls3 * ballsNumber3) + (priceBalls4 * ballsNumber4) + (priceTinsel * tinselNumber) + (priceTinsel2 * tinselNumber2) + (priceTinsel3 * tinselNumber3) + (priceTinsel4 * tinselNumber4) + (priceCandle * candlesNumber) + (priceCandle2 * candlesNumber2) + (priceCandle3 * candlesNumber3) + priceStand + priceDelivery);
-            childNodeHTML += " Euro";
-            childNodeHTML += "</a>";
-            node.innerHTML = childNodeHTML;
-        }
-    
+
+        let node: HTMLElement = document.getElementById("price");
+        let childNodeHTML: string;
+        childNodeHTML = "";
+        childNodeHTML += "<a>";
+        childNodeHTML += (priceTree + (priceBalls * ballsNumber) + (priceBalls2 * ballsNumber2) + (priceBalls3 * ballsNumber3) + (priceBalls4 * ballsNumber4) + (priceTinsel * tinselNumber) + (priceTinsel2 * tinselNumber2) + (priceTinsel3 * tinselNumber3) + (priceTinsel4 * tinselNumber4) + (priceCandle * candlesNumber) + (priceCandle2 * candlesNumber2) + (priceCandle3 * candlesNumber3) + priceStand + priceDelivery);
+        childNodeHTML += " Euro";
+        childNodeHTML += "</a>";
+        node.innerHTML = childNodeHTML;
+    }
+
     function checkInputs(): void {
         console.log("Error");
         if (priceBalls == 0 || priceTinsel == 0 || priceCandle == 0 || priceStand == 0 || priceDelivery == 0 || name == "" || adress == "")
-         document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!"; 
+            document.getElementById("check").innerHTML = "F�llen Sie die Felder aus!";
         else {
             document.getElementById("check").innerHTML = "Bestellung m�glich";
         }
-    }    
-    
-    
+    }
+
+
     function setupAsyncForm(): void {
         let button: Element = document.querySelector("[type=button]");
         button.addEventListener("click", handleClickOnAsync);
     }
-    
-       function handleClickOnAsync(_event: Event): void {
+
+    function handleClickOnAsync(_event: Event): void {
         //let submitcart: HTMLElement = document.getElementById("submit");
         let name: string = (<HTMLInputElement>document.querySelector("#cart")).innerText;
         sendRequestWithCustomData(name);
         alert(name);
     }
-    
+
     function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         xhr.open("GET", "https://eia-cata.herokuapp.com/" + "?article=" + _color, true);
@@ -668,13 +662,8 @@ function createShop(): void {
             console.log("response: " + xhr.response);
         }
     }
+}
 
 
-  
-main();
-    
-}   
-    
-    
 
-    
+
