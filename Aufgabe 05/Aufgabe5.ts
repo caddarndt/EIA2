@@ -644,7 +644,7 @@ function createShop(): void {
     }
     
        function handleClickOnAsync(_event: Event): void {
-        let submitcart: HTMLElement = document.getElementById("submit");
+        //let submitcart: HTMLElement = document.getElementById("submit");
         let name: string = (<HTMLInputElement>document.querySelector("#cart")).innerText;
         sendRequestWithCustomData(name);
         alert(name);

@@ -557,7 +557,7 @@ var Aufgabe5;
         button.addEventListener("click", handleClickOnAsync);
     }
     function handleClickOnAsync(_event) {
-        let submitcart = document.getElementById("submit");
+        //let submitcart: HTMLElement = document.getElementById("submit");
         let name = document.querySelector("#cart").innerText;
         sendRequestWithCustomData(name);
         alert(name);
