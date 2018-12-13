@@ -14,6 +14,10 @@ Er wurde nicht kopiert und auch nicht diktiert.
 function main(): void {
     document.addEventListener("DOMContentLoaded", createShop);
     document.addEventListener("DOMContentLoaded", changeEventListener);
+    //setupAsyncForm();
+}
+    
+    window.onload = function() {
     setupAsyncForm();
 }
     

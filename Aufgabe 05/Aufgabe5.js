@@ -12,8 +12,11 @@ var Aufgabe5;
     function main() {
         document.addEventListener("DOMContentLoaded", createShop);
         document.addEventListener("DOMContentLoaded", changeEventListener);
-        setupAsyncForm();
+        //setupAsyncForm();
     }
+    window.onload = function () {
+        setupAsyncForm();
+    };
     function changeEventListener(_event) {
         let fieldset = document.getElementById("fieldset");
         fieldset.addEventListener("change", handleChange);
