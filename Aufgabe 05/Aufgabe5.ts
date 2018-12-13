@@ -665,7 +665,7 @@ function createShop(): void {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
-            //alert("response: " + xhr.response);
+            console.log("response: " + xhr.response);
         }
     }
 
