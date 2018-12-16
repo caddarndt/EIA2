@@ -23,6 +23,13 @@ var DatabaseClient;
         let query = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
+    function find(_event) {
+        let search = document.getElementById("matnumber");
+        let query = "command=find";
+        query += "&matrikel=" + search.value;
+        console.log(query);
+        sendRequest(query, handleFindResponse);
+    }
     function sendRequest(_query, _callback) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", serverAddress + "?" + _query, true);

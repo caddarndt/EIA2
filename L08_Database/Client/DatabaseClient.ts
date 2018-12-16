@@ -25,6 +25,14 @@ namespace DatabaseClient {
         let query: string = "command=refresh";
         sendRequest(query, handleFindResponse);
     }
+    
+     function find(_event: Event): void{
+        let search: HTMLInputElement = <HTMLInputElement>document.getElementById("matnumber");
+        let query: string ="command=find";
+        query+= "&matrikel=" + search.value ;
+        console.log(query);
+        sendRequest(query, handleFindResponse);
+        }
 
     function sendRequest(_query: string, _callback: EventListener): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
