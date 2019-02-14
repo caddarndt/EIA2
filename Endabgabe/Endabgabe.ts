@@ -211,7 +211,7 @@ function uno(): void {
                     return true;
                 break;
             case (false):
-                if (color != domColor && color != domColor || value != domValue )
+                if (color != domColor && value != domValue )
                     return false;
                 break;
         }
