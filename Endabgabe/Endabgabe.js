@@ -91,37 +91,34 @@ var Endabgabe;
             pile.push(card);
             createPile(pile);
             console.log(pile);
-            /*
-                    switch (getRandom(2)) {
-                        case (1): {
-                            turnPlayer();
-                        }
-                        case (2): {
-                            turnComputer();
-                        }
-                    } */
+            switch (Math.floor(Math.random() * 2) + 1) {
+                case (1): {
+                    turnPlayer();
+                    break;
+                }
+                case (2): {
+                    turnComputer();
+                    break;
+                }
+            }
         }
         start();
         /* Spielerphase */
-        /*
-        function turnPlayer(): void {
-            let currentDeck: number = hand.length;
-            let change: boolean;
+        function turnPlayer() {
+            /*let currentDeck: number = hand.length;
+            let change: boolean; */
             alert("Du bist am Zug!");
-            
-        
+            /* wenn sich die hand.length ver�ndert hat wird turnComputer() ausgef�hrt */
         }
-        
-    /* Gegnerphase */
-        /*
-        function turnComputer(): void {
-            let currentDeck: number = computer.length
+        /* Gegnerphase */
+        function turnComputer() {
+            /* let currentDeck: number = computer.length
             let change: boolean
+            */
             alert("Der Gegner ist am Zug!");
-        Hier eine �hnliche put funktion, was ist m�glich etc etc
+            /*Hier eine �hnliche put funktion, was ist m�glich etc etc*/
+            /* wenn sich die computer.length ver�ndert hat wird turnPlayer() ausgef�hrt */
         }
-        
-       */
         /* Karte nachziehen */
         function take(_cards) {
             if (deck.length > 0) {
@@ -163,11 +160,11 @@ var Endabgabe;
             console.log(lastCard);
             switch (_isPlayable) {
                 case (true):
-                    if (color == domColor || value == domValue)
+                    if (color == domColor || value == domValue || color == "s")
                         return true;
                     break;
                 case (false):
-                    if (color != domColor && value != domValue)
+                    if (color != domColor && color != domColor || value != domValue)
                         return false;
                     break;
             }
@@ -193,9 +190,8 @@ var Endabgabe;
                 createPile(pile);
                 put();
             }
-            if (domCard != handCard && checkIfPlayable(_event, false)) {
+            else
                 alert("Diese Karte kannst du nicht spielen!");
-            }
         }
         function createPile(_values) {
             for (let i = 0; i < _values.length; i++) {

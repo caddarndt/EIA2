@@ -117,40 +117,41 @@ function uno(): void {
         pile.push(card);
         createPile(pile);
         console.log(pile);
-/*
-        switch (getRandom(2)) {
+
+        switch (Math.floor(Math.random() * 2) + 1) {
             case (1): {
                 turnPlayer();
+                break;
             }
             case (2): {
                 turnComputer();
+                break;
             }
-        } */
+        } 
     }
 
     start();
     
-    /* Spielerphase */
-    /*
-    function turnPlayer(): void {
-        let currentDeck: number = hand.length;
-        let change: boolean;
-        alert("Du bist am Zug!");
-        
+/* Spielerphase */
     
+    function turnPlayer(): void {
+        /*let currentDeck: number = hand.length;
+        let change: boolean; */
+        alert("Du bist am Zug!");
+        /* wenn sich die hand.length verändert hat wird turnComputer() ausgeführt */
     }
     
 /* Gegnerphase */
-    /*
-    function turnComputer(): void {
-        let currentDeck: number = computer.length
-        let change: boolean
-        alert("Der Gegner ist am Zug!");
-    Hier eine ähnliche put funktion, was ist möglich etc etc
-    } 
     
-   */
-         
+    function turnComputer(): void {
+        /* let currentDeck: number = computer.length
+        let change: boolean
+        */
+        alert("Der Gegner ist am Zug!");
+    /*Hier eine ähnliche put funktion, was ist möglich etc etc*/
+    /* wenn sich die computer.length verändert hat wird turnPlayer() ausgeführt */
+    } 
+       
 
 /* Karte nachziehen */
     
@@ -188,12 +189,8 @@ function uno(): void {
        
 /*Karte ablegen */ 
     
- 
-
-    
     function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
         let domCard: HTMLElement = <HTMLElement>_event.target;
-        
         let lastCard: string = pile.slice(-1)[0];
 
         let color: string = lastCard.substr(0, 1);
@@ -210,11 +207,11 @@ function uno(): void {
         switch (_isPlayable) {
 
             case (true):
-                if (color == domColor || value == domValue)
+                if (color == domColor || value == domValue || color == "s")
                     return true;
                 break;
             case (false):
-                if (color != domColor && value != domValue)
+                if (color != domColor && color != domColor || value != domValue )
                     return false;
                 break;
         }
@@ -226,10 +223,12 @@ function uno(): void {
     }
 
     put();
+    
     function putEvent(_event: Event): void {
         console.log(_event);
         let handCard: HTMLElement = document.getElementById("handkarten");
         let domCard: HTMLElement = <HTMLElement>_event.target;
+       
         if (domCard != handCard && checkIfPlayable(_event, true)) {
             let index: number;
             let domAttribute: string = domCard.getAttribute("id");
@@ -243,9 +242,9 @@ function uno(): void {
             createPile(pile);
             put();
         }
-        if (domCard != handCard && checkIfPlayable(_event, false)) {
+        else 
             alert("Diese Karte kannst du nicht spielen!");
-        }
+        
     }
 
     function createPile(_values: string[]): void {
