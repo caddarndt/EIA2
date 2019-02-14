@@ -67,15 +67,15 @@ var Endabgabe;
                 }
             }
         }
-        function createComputerCards(_values) {
-            for (let i = 0; i < _values.length; i++) {
+        function createComputerCards(_valuesB) {
+            for (let i = 0; i < _valuesB.length; i++) {
                 let color = "black";
-                let value = "Uno";
+                let valueB = "Uno";
                 let div = document.createElement("div");
                 document.getElementById("computerkarten").appendChild(div);
                 div.setAttribute("class", "enemycards");
-                div.setAttribute("id", "a" + i);
-                document.getElementById("a" + i).innerHTML += value;
+                div.setAttribute("id", "c" + i);
+                document.getElementById("c" + i).innerHTML += valueB;
                 let s = div.style;
                 s.backgroundColor = color;
                 if (color == "black") {
@@ -83,6 +83,45 @@ var Endabgabe;
                 }
             }
         }
+        /*Spielstart */
+        function start() {
+            let maxNumber = deck.length;
+            let randomNum = getRandom(maxNumber);
+            let card = deck.splice(randomNum, 1)[0];
+            pile.push(card);
+            createPile(pile);
+            console.log(pile);
+            /*
+                    switch (getRandom(2)) {
+                        case (1): {
+                            turnPlayer();
+                        }
+                        case (2): {
+                            turnComputer();
+                        }
+                    } */
+        }
+        start();
+        /* Spielerphase */
+        /*
+        function turnPlayer(): void {
+            let currentDeck: number = hand.length;
+            let change: boolean;
+            alert("Du bist am Zug!");
+            
+        
+        }
+        
+    /* Gegnerphase */
+        /*
+        function turnComputer(): void {
+            let currentDeck: number = computer.length
+            let change: boolean
+            alert("Der Gegner ist am Zug!");
+        Hier eine �hnliche put funktion, was ist m�glich etc etc
+        }
+        
+       */
         /* Karte nachziehen */
         function take(_cards) {
             if (deck.length > 0) {
@@ -112,6 +151,27 @@ var Endabgabe;
             }
         }
         /*Karte ablegen */
+        function checkIfPlayable(_event, _isPlayable) {
+            let domCard = _event.target;
+            let lastCard = pile.slice(-1)[0];
+            let color = lastCard.substr(0, 1);
+            let value = lastCard.substr(1);
+            let domColor = domCard.getAttribute("id");
+            domColor = domColor.substr(0, 1);
+            let domValue = domCard.getAttribute("id");
+            domValue = domValue.substr(1);
+            console.log(lastCard);
+            switch (_isPlayable) {
+                case (true):
+                    if (color == domColor || value == domValue)
+                        return true;
+                    break;
+                case (false):
+                    if (color != domColor && value != domValue)
+                        return false;
+                    break;
+            }
+        }
         function put() {
             document.getElementById("handkarten").addEventListener("click", putEvent);
         }
@@ -120,7 +180,7 @@ var Endabgabe;
             console.log(_event);
             let handCard = document.getElementById("handkarten");
             let domCard = _event.target;
-            if (domCard != handCard) {
+            if (domCard != handCard && checkIfPlayable(_event, true)) {
                 let index;
                 let domAttribute = domCard.getAttribute("id");
                 domAttribute = domAttribute.substr(1);
@@ -132,6 +192,9 @@ var Endabgabe;
                 discard2();
                 createPile(pile);
                 put();
+            }
+            if (domCard != handCard && checkIfPlayable(_event, false)) {
+                alert("Diese Karte kannst du nicht spielen!");
             }
         }
         function createPile(_values) {

@@ -23,6 +23,7 @@ let computer: string[] = [];
     
 /* Hauptfunktion */
     
+    
 function uno(): void {
     let handCards: number = 7;
     let computerCards: number = 7;
@@ -85,17 +86,17 @@ function uno(): void {
         }
     }
 
-    function createComputerCards(_values: string[]): void {
-        for (let i: number = 0; i < _values.length; i++) {
+    function createComputerCards(_valuesB: string[]): void {
+        for (let i: number = 0; i < _valuesB.length; i++) {
 
             let color: string = "black";
-            let value: string = "Uno";
+            let valueB: string = "Uno";
 
             let div: HTMLDivElement = document.createElement("div");
             document.getElementById("computerkarten").appendChild(div);
             div.setAttribute("class", "enemycards");
-            div.setAttribute("id", "a" + i);
-            document.getElementById("a" + i).innerHTML += value;
+            div.setAttribute("id", "c" + i);
+            document.getElementById("c" + i).innerHTML += valueB;
 
             let s: CSSStyleDeclaration = div.style;
             s.backgroundColor = color;
@@ -106,6 +107,50 @@ function uno(): void {
         }
     }
         
+/*Spielstart */
+    
+    function start(): void {
+
+        let maxNumber: number = deck.length;
+        let randomNum: number = getRandom(maxNumber);
+        let card: string = deck.splice(randomNum, 1)[0];
+        pile.push(card);
+        createPile(pile);
+        console.log(pile);
+/*
+        switch (getRandom(2)) {
+            case (1): {
+                turnPlayer();
+            }
+            case (2): {
+                turnComputer();
+            }
+        } */
+    }
+
+    start();
+    
+    /* Spielerphase */
+    /*
+    function turnPlayer(): void {
+        let currentDeck: number = hand.length;
+        let change: boolean;
+        alert("Du bist am Zug!");
+        
+    
+    }
+    
+/* Gegnerphase */
+    /*
+    function turnComputer(): void {
+        let currentDeck: number = computer.length
+        let change: boolean
+        alert("Der Gegner ist am Zug!");
+    Hier eine ähnliche put funktion, was ist möglich etc etc
+    } 
+    
+   */
+         
 
 /* Karte nachziehen */
     
@@ -141,10 +186,43 @@ function uno(): void {
     }
     
        
-/*Karte ablegen */       
+/*Karte ablegen */ 
+    
+ 
 
+    
+    function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
+        let domCard: HTMLElement = <HTMLElement>_event.target;
+        
+        let lastCard: string = pile.slice(-1)[0];
+
+        let color: string = lastCard.substr(0, 1);
+        let value: string = lastCard.substr(1);
+
+        let domColor: string = domCard.getAttribute("id");
+        domColor = domColor.substr(0, 1);
+
+        let domValue: string = domCard.getAttribute("id");
+        domValue = domValue.substr(1);
+
+        console.log(lastCard);
+
+        switch (_isPlayable) {
+
+            case (true):
+                if (color == domColor || value == domValue)
+                    return true;
+                break;
+            case (false):
+                if (color != domColor && value != domValue)
+                    return false;
+                break;
+        }
+    }
+   
     function put(): void {
         document.getElementById("handkarten").addEventListener("click", putEvent);
+        
     }
 
     put();
@@ -152,7 +230,7 @@ function uno(): void {
         console.log(_event);
         let handCard: HTMLElement = document.getElementById("handkarten");
         let domCard: HTMLElement = <HTMLElement>_event.target;
-        if (domCard != handCard) {
+        if (domCard != handCard && checkIfPlayable(_event, true)) {
             let index: number;
             let domAttribute: string = domCard.getAttribute("id");
             domAttribute = domAttribute.substr(1);
@@ -164,6 +242,9 @@ function uno(): void {
             discard2();
             createPile(pile);
             put();
+        }
+        if (domCard != handCard && checkIfPlayable(_event, false)) {
+            alert("Diese Karte kannst du nicht spielen!");
         }
     }
 
