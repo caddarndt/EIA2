@@ -16,6 +16,7 @@ var Endabgabe;
     let hand = [];
     let pile = [];
     let computer = [];
+    let response = [];
     /* Hauptfunktion */
     function uno() {
         let handCards = 7;
@@ -140,7 +141,7 @@ var Endabgabe;
             discard();
             createCards(hand);
             put();
-            checkIfPlayable2(hand);
+            checkIfPlayable(hand);
         }
         function space(_event) {
             var keyCode = _event.keyCode;
@@ -149,9 +150,8 @@ var Endabgabe;
             }
         }
         /*Karte ablegen */
-        function checkIfPlayable2(currentDeck) {
+        function checkIfPlayable(currentDeck) {
             let lastCard = pile.slice(-1)[0];
-            let response = [];
             for (let i = 0; i < currentDeck.length; i++) {
                 if (currentDeck[i].substr(0, 1) == lastCard.substr(0, 1) ||
                     currentDeck[i].substr(1) == lastCard.substr(1) || currentDeck[i].substr(0, 1) == "s") {
@@ -163,35 +163,7 @@ var Endabgabe;
             console.log(response);
             return response;
         }
-        checkIfPlayable2(hand);
-        /*
-          function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
-              let domCard: HTMLElement = <HTMLElement>_event.target;
-              let lastCard: string = pile.slice(-1)[0];
-      
-              let color: string = lastCard.substr(0, 1);
-              let value: string = lastCard.substr(1);
-      
-              let domColor: string = domCard.getAttribute("id");
-              domColor = domColor.substr(0, 1);
-      
-              let domValue: string = domCard.getAttribute("id");
-              domValue = domValue.substr(1);
-      
-              console.log(lastCard);
-      
-              switch (_isPlayable) {
-      
-                  case (true):
-                      if (color == domColor || value == domValue || color == "s")
-                          return true;
-                      break;
-                  case (false):
-                      if (color != domColor && value != domValue )
-                          return false;
-                      break;
-              }
-          } */
+        checkIfPlayable(hand);
         function put() {
             document.getElementById("handkarten").addEventListener("click", putEvent);
         }
@@ -200,11 +172,11 @@ var Endabgabe;
             console.log(_event);
             let handCard = document.getElementById("handkarten");
             let domCard = _event.target;
-            if (domCard != handCard) {
-                let index;
-                let domAttribute = domCard.getAttribute("id");
-                domAttribute = domAttribute.substr(1);
-                index = parseInt(domAttribute);
+            let index;
+            let domAttribute = domCard.getAttribute("id");
+            domAttribute = domAttribute.substr(1);
+            index = parseInt(domAttribute);
+            if (domCard != handCard && response[index] == "true") {
                 let card = hand.splice(index, 1)[0];
                 pile.push(card);
                 discard();
@@ -212,7 +184,7 @@ var Endabgabe;
                 discard2();
                 createPile(pile);
                 put();
-                checkIfPlayable2(hand);
+                checkIfPlayable(hand);
             }
             else
                 alert("Diese Karte kannst du nicht spielen!");

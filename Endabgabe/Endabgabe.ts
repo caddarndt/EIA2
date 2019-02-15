@@ -20,6 +20,9 @@ let hand: string[] = [];
 let pile: string[] = [];
 let computer: string[] = [];
 
+let response: string[] = [];
+
+
     
 /* Hauptfunktion */
     
@@ -177,7 +180,7 @@ function uno(): void {
         discard();
         createCards(hand);
         put();
-        checkIfPlayable2(hand);
+        checkIfPlayable(hand);
     }
 
     function space(_event: KeyboardEvent): void {
@@ -190,9 +193,8 @@ function uno(): void {
        
 /*Karte ablegen */ 
     
-    function checkIfPlayable2(currentDeck: string[]): string[] {
+    function checkIfPlayable(currentDeck: string[]): string[] {
         let lastCard: string = pile.slice(-1)[0];
-        let response: string[] = [];
 
         for (let i: number = 0; i < currentDeck.length; i++) {
             if (currentDeck[i].substr(0, 1) == lastCard.substr(0, 1) || 
@@ -206,38 +208,7 @@ function uno(): void {
         return response;
     }
     
-    checkIfPlayable2(hand);
-    
-    
-
-  /*
-    function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
-        let domCard: HTMLElement = <HTMLElement>_event.target;
-        let lastCard: string = pile.slice(-1)[0];
-
-        let color: string = lastCard.substr(0, 1);
-        let value: string = lastCard.substr(1);
-
-        let domColor: string = domCard.getAttribute("id");
-        domColor = domColor.substr(0, 1);
-
-        let domValue: string = domCard.getAttribute("id");
-        domValue = domValue.substr(1);
-
-        console.log(lastCard);
-
-        switch (_isPlayable) {
-
-            case (true):
-                if (color == domColor || value == domValue || color == "s")
-                    return true;
-                break;
-            case (false):
-                if (color != domColor && value != domValue )
-                    return false;
-                break;
-        }
-    } */
+    checkIfPlayable(hand);
    
     function put(): void {
         document.getElementById("handkarten").addEventListener("click", putEvent);
@@ -250,12 +221,12 @@ function uno(): void {
         console.log(_event);
         let handCard: HTMLElement = document.getElementById("handkarten");
         let domCard: HTMLElement = <HTMLElement>_event.target;
+        let index: number;
+        let domAttribute: string = domCard.getAttribute("id");
+        domAttribute = domAttribute.substr(1);
+        index = parseInt(domAttribute);
        
-        if (domCard != handCard ) {
-            let index: number;
-            let domAttribute: string = domCard.getAttribute("id");
-            domAttribute = domAttribute.substr(1);
-            index = parseInt(domAttribute);
+        if (domCard != handCard && response[index] == "true" ) {
             let card: string = hand.splice(index, 1)[0];
             pile.push(card);
             discard();
@@ -263,7 +234,7 @@ function uno(): void {
             discard2();
             createPile(pile);
             put();
-            checkIfPlayable2(hand);
+            checkIfPlayable(hand);
         }
         else 
             alert("Diese Karte kannst du nicht spielen!");

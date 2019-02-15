@@ -88,6 +88,10 @@ Er wurde nicht kopiert und auch nicht diktiert.
 	clear: left;
 }
 
+#handkarten > div:nth-child(8) {
+	clear: left;
+}
+
 #stack > div {
 	position: absolute;
 	top: 20px;
