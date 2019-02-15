@@ -140,6 +140,7 @@ var Endabgabe;
             discard();
             createCards(hand);
             put();
+            checkIfPlayable2(hand);
         }
         function space(_event) {
             var keyCode = _event.keyCode;
@@ -148,27 +149,49 @@ var Endabgabe;
             }
         }
         /*Karte ablegen */
-        function checkIfPlayable(_event, _isPlayable) {
-            let domCard = _event.target;
+        function checkIfPlayable2(currentDeck) {
             let lastCard = pile.slice(-1)[0];
-            let color = lastCard.substr(0, 1);
-            let value = lastCard.substr(1);
-            let domColor = domCard.getAttribute("id");
-            domColor = domColor.substr(0, 1);
-            let domValue = domCard.getAttribute("id");
-            domValue = domValue.substr(1);
-            console.log(lastCard);
-            switch (_isPlayable) {
-                case (true):
-                    if (color == domColor || value == domValue || color == "s")
-                        return true;
-                    break;
-                case (false):
-                    if (color != domColor && value != domValue)
-                        return false;
-                    break;
+            let response = [];
+            for (let i = 0; i < currentDeck.length; i++) {
+                if (currentDeck[i].substr(0, 1) == lastCard.substr(0, 1) ||
+                    currentDeck[i].substr(1) == lastCard.substr(1) || currentDeck[i].substr(0, 1) == "s") {
+                    response[i] = "true";
+                }
+                else
+                    response[i] = "false";
             }
+            console.log(response);
+            return response;
         }
+        checkIfPlayable2(hand);
+        /*
+          function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
+              let domCard: HTMLElement = <HTMLElement>_event.target;
+              let lastCard: string = pile.slice(-1)[0];
+      
+              let color: string = lastCard.substr(0, 1);
+              let value: string = lastCard.substr(1);
+      
+              let domColor: string = domCard.getAttribute("id");
+              domColor = domColor.substr(0, 1);
+      
+              let domValue: string = domCard.getAttribute("id");
+              domValue = domValue.substr(1);
+      
+              console.log(lastCard);
+      
+              switch (_isPlayable) {
+      
+                  case (true):
+                      if (color == domColor || value == domValue || color == "s")
+                          return true;
+                      break;
+                  case (false):
+                      if (color != domColor && value != domValue )
+                          return false;
+                      break;
+              }
+          } */
         function put() {
             document.getElementById("handkarten").addEventListener("click", putEvent);
         }
@@ -177,7 +200,7 @@ var Endabgabe;
             console.log(_event);
             let handCard = document.getElementById("handkarten");
             let domCard = _event.target;
-            if (domCard != handCard && checkIfPlayable(_event, true)) {
+            if (domCard != handCard) {
                 let index;
                 let domAttribute = domCard.getAttribute("id");
                 domAttribute = domAttribute.substr(1);
@@ -189,6 +212,7 @@ var Endabgabe;
                 discard2();
                 createPile(pile);
                 put();
+                checkIfPlayable2(hand);
             }
             else
                 alert("Diese Karte kannst du nicht spielen!");

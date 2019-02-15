@@ -177,6 +177,7 @@ function uno(): void {
         discard();
         createCards(hand);
         put();
+        checkIfPlayable2(hand);
     }
 
     function space(_event: KeyboardEvent): void {
@@ -189,6 +190,27 @@ function uno(): void {
        
 /*Karte ablegen */ 
     
+    function checkIfPlayable2(currentDeck: string[]): string[] {
+        let lastCard: string = pile.slice(-1)[0];
+        let response: string[] = [];
+
+        for (let i: number = 0; i < currentDeck.length; i++) {
+            if (currentDeck[i].substr(0, 1) == lastCard.substr(0, 1) || 
+                currentDeck[i].substr(1) == lastCard.substr(1) || currentDeck[i].substr(0, 1) == "s") {
+                response[i] = "true";
+            }
+            else
+                response[i] = "false";
+        }
+        console.log(response);
+        return response;
+    }
+    
+    checkIfPlayable2(hand);
+    
+    
+
+  /*
     function checkIfPlayable(_event: Event, _isPlayable: boolean): boolean {
         let domCard: HTMLElement = <HTMLElement>_event.target;
         let lastCard: string = pile.slice(-1)[0];
@@ -215,7 +237,7 @@ function uno(): void {
                     return false;
                 break;
         }
-    }
+    } */
    
     function put(): void {
         document.getElementById("handkarten").addEventListener("click", putEvent);
@@ -229,7 +251,7 @@ function uno(): void {
         let handCard: HTMLElement = document.getElementById("handkarten");
         let domCard: HTMLElement = <HTMLElement>_event.target;
        
-        if (domCard != handCard && checkIfPlayable(_event, true)) {
+        if (domCard != handCard ) {
             let index: number;
             let domAttribute: string = domCard.getAttribute("id");
             domAttribute = domAttribute.substr(1);
@@ -241,6 +263,7 @@ function uno(): void {
             discard2();
             createPile(pile);
             put();
+            checkIfPlayable2(hand);
         }
         else 
             alert("Diese Karte kannst du nicht spielen!");
