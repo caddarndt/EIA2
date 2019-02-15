@@ -8,15 +8,19 @@ var Endabgabe;
     Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
     Er wurde nicht kopiert und auch nicht diktiert.
     */
-    let deck = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rReverse", "rReverse", "rStop", "rStop", "r+2", "r+2",
-        "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gReverse", "gReverse", "gStop", "gStop", "g+2", "g+2",
-        "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bReverse", "bReverse", "bStop", "bStop", "b+2", "b+2",
-        "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yReverse", "yReverse", "yStop", "yStop", "y+2", "y+2",
-        "s+4", "s+4", "s+4", "s+4", "sChoice", "sChoice", "sChoice", "sChoice"];
+    let deck = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9", "rR", "rR", "rX", "rX", "r+", "r+",
+        "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9", "gR", "gR", "gX", "gX", "g+", "g+",
+        "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9", "bR", "bR", "bX", "bX", "b+", "b+",
+        "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9", "yR", "yR", "yS", "yS", "y+", "y+",
+        "s#", "s#", "s#", "s#", "sC", "sC", "sC", "sC"];
     let hand = [];
     let pile = [];
     let computer = [];
     let response = [];
+    let responseComputer = [];
+    /*var last: string = hand[hand.length - 1];
+    var lastC: string = computer[computer.length - 1];
+    var lastCard: string = pile[pile.length - 1]; */
     /* Hauptfunktion */
     function uno() {
         let handCards = 7;
@@ -113,12 +117,42 @@ var Endabgabe;
         }
         /* Gegnerphase */
         function turnComputer() {
-            /* let currentDeck: number = computer.length
-            let change: boolean
-            */
+            /* let currentDeck: number = computer.length; */
+            let possibleCards = [];
+            /*let random: number = Math.floor(Math.random() * possibleCards.length) + 1; */
             alert("Der Gegner ist am Zug!");
-            /*Hier eine �hnliche put funktion, was ist m�glich etc etc*/
-            /* wenn sich die computer.length ver�ndert hat wird turnPlayer() ausgef�hrt */
+            checkIfPlayableC(computer);
+            for (let i = 0; i < computer.length; i++) {
+                if (responseComputer[i] == "true") {
+                    possibleCards.push(computer[i]);
+                }
+            }
+            console.log(possibleCards);
+            if (possibleCards.length > 0) {
+                let card = possibleCards[possibleCards.length - 1];
+                pile.push(card);
+                computer.push.apply(computer, possibleCards);
+                discardC();
+                createComputerCards(computer);
+                discardC2();
+                createPile(pile);
+                console.log(possibleCards);
+            }
+            if (possibleCards.length == 0) {
+                if (deck.length > 0) {
+                    takeC();
+                }
+                else
+                    pileToDeck();
+            }
+        }
+        /* Ablagestapel zu Deck */
+        function pileToDeck() {
+            if (deck.length == 0) {
+                deck.push.apply(deck, pile);
+            }
+            console.log(deck);
+            console.log(pile);
         }
         /* Karte nachziehen */
         function take(_cards) {
@@ -128,6 +162,17 @@ var Endabgabe;
                     let randomNum = getRandom(maxNumber);
                     let card = deck.splice(randomNum, 1)[0];
                     hand.push(card);
+                }
+            }
+        }
+        function takeC(n = 1) {
+            if (deck.length > 0) {
+                for (let i = 0; i < n; i++) {
+                    let maxNumber = deck.length;
+                    let randomNum = getRandom(maxNumber);
+                    let card = deck.splice(randomNum, 1)[0];
+                    computer.push(card);
+                    turnPlayer();
                 }
             }
         }
@@ -142,6 +187,7 @@ var Endabgabe;
             createCards(hand);
             put();
             checkIfPlayable(hand);
+            checkIfPlayableC(computer);
         }
         function space(_event) {
             var keyCode = _event.keyCode;
@@ -149,7 +195,7 @@ var Endabgabe;
                 takeEvent();
             }
         }
-        /*Karte ablegen */
+        /* Ist Karte m�glich */
         function checkIfPlayable(currentDeck) {
             let lastCard = pile.slice(-1)[0];
             for (let i = 0; i < currentDeck.length; i++) {
@@ -163,7 +209,20 @@ var Endabgabe;
             console.log(response);
             return response;
         }
-        checkIfPlayable(hand);
+        function checkIfPlayableC(currentDeck) {
+            let lastCard = pile.slice(-1)[0];
+            for (let i = 0; i < currentDeck.length - 1; i++) {
+                if (currentDeck[i].substr(0, 1) == lastCard.substr(0, 1) ||
+                    currentDeck[i].substr(1) == lastCard.substr(1) || currentDeck[i].substr(0, 1) == "s") {
+                    responseComputer[i] = "true";
+                }
+                else
+                    responseComputer[i] = "false";
+            }
+            console.log(responseComputer);
+            return responseComputer;
+        }
+        /*Karte ablegen */
         function put() {
             document.getElementById("handkarten").addEventListener("click", putEvent);
         }
@@ -233,6 +292,15 @@ var Endabgabe;
             createCards(hand);
             put();
         }
+        /* Zug beenden */
+        function endTurn() {
+            let button = document.getElementById("end");
+            button.addEventListener("click", clickEnd);
+        }
+        endTurn();
+        function clickEnd() {
+            turnComputer();
+        }
         /* Random */
         function getRandom(_maxNum) {
             return Math.floor(Math.random() * Math.floor(_maxNum));
@@ -248,6 +316,24 @@ var Endabgabe;
             document.getElementsByTagName("body")[0].appendChild(div);
         }
         function discard2() {
+            let node = document.getElementById("stack");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div = document.createElement("div");
+            div.setAttribute("id", "stack");
+            document.getElementsByTagName("body")[0].appendChild(div);
+        }
+        function discardC() {
+            let node = document.getElementById("computerkarten");
+            if (node.parentNode) {
+                node.parentNode.removeChild(node);
+            }
+            let div = document.createElement("div");
+            div.setAttribute("id", "computerkarten");
+            document.getElementsByTagName("body")[0].appendChild(div);
+        }
+        function discardC2() {
             let node = document.getElementById("stack");
             if (node.parentNode) {
                 node.parentNode.removeChild(node);
