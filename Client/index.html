@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
+    <script src="Data.js" type="text/javascript" charset="utf-8"></script>
+    <script src="main.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Rocket.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Particle.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Heart.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Star.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Vector.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Rocket.js" type="text/javascript" charset="utf-8"></script>
+    <script src="Server.js" type="text/javascript" charset="utf-8"></script>
+    
+
+    <title>Raketenkonfigurator</title>
+</head>
+
+<body>
+    <div id="RocketFormDiv">
+        <form id="RocketForm">
+            <h2>Stelle eine Rakete zusammen</h2>
+            <fieldset id=SizeSelector>
+                <legend>Wie groß?</legend>
+                <span id="SelectSize">
+                    <span>
+                        klein
+                        <input type="range" name="size" id="size" min="10" max="100" step="10" value="10">
+                        groß
+                    </span>
+                </span>
+            </fieldset>
+            <fieldset id="ColorSelector">
+                <legend>Farbe</legend>
+                <input type="color" id="color" name="color" value="#ff0000">
+            </fieldset>
+            <fieldset id="ShapeSelector">
+                <legend>Form</legend>
+                <input type="radio" name="shape" id="CircleShape" value="circle" checked />
+                <label for="CicleShape"> Kreis </label>
+                <input type="radio" name="shape" id="StarShape" value="star" />
+                <label for="StarShape">Stern</label>
+                <input type="radio" name="shape" id="HeartShape" value="heart" />
+                <label for="HeartShape">Herz</label>
+            </fieldset>
+            <fieldset id="RocketName">
+                <legend>Name</legend>
+                <input name="name" id="Rocketname">
+            </fieldset>
+        </form>
+        <button type="reset" form="RocketForm">Reset</button>
+        <button type="button" form="RocketForm" id="save">Save</button>
+    </div>
+    <div id="Nightsky">
+        <h2>Lasse die Rakete fliegen</h2>
+        <canvas width=800 height=400></canvas>
+    </div>
+    <div id="RocketButtons">
+    </div>
+</body>
+
+</html>
