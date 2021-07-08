@@ -14,26 +14,37 @@ Er wurde nicht kopiert und auch nicht diktiert.
 <meta charset="ISO-8859-1">
 
 <script src="main.js"></script>
+<script src="ball.js"></script>
 <script src="" type="text/javascript" charset="utf-8"></script>
 
 <link rel="stylesheet" type="text/css" href="final.css">
+
 <title>Jogis Trainingssimulator</title>
+
 </head>
+
 <body>
     <div id="Feld">
         <h2>Klicke auf das Feld!</h2>
     </div>
 
     <div id="overlay">
-
-        <div id="ballContainer">
-            <img id="ball" src="football.png" height="25px" width="25px">
-        </div>
-
         <canvas width=850 height=450 id="canvas">
         </canvas>
-
     </div>
+
+    <fieldset id="ColorSelector">
+        <legend>Farbe Heimteam</legend>
+        <input type="color" id="color1" name="color1" value="#ff0000">
+        <input type="hidden" id="playerid" name="id" value="-1">
+    </fieldset>
     
+    <fieldset id="ColorSelector">
+        <legend>Farbe Gegnerteam</legend>
+        <input type="color" id="color2" name="color2" value="#3632a8">
+        <input type="hidden" id="playerid" name="id" value="-1">
+    </fieldset>
+
 </body>
+
 </html>

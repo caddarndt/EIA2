@@ -22,23 +22,3 @@ div {
 margin: 0.5em;
 padding: 0.5em;
 }
-
-#ballContainer {
-    width: 300px;
-    height: 300px;
-    overflow: visible;
-    cursor: pointer;
-    z-index: 2;
-}
-
-#ball {
-    position: relative;
-    left: 50px;
-    top: 50px;
-    transition: left .5s cubic-bezier(.42,-0.3,.78,1.25), 
-                top .5s cubic-bezier(.42,-0.3,.78,1.25);
-}
-
-#overlay canvas, #ballContainer {
-    position: absolute;
-  }
