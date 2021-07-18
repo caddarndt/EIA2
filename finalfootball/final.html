@@ -12,11 +12,16 @@ Er wurde nicht kopiert und auch nicht diktiert.
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
-<script src="main.js"></script>
-<script src="ball.js"></script>
-<script src="" type="text/javascript" charset="utf-8"></script>
-
+<script> var exports = {}; </script>
+<script src="dist/vector.js"></script>
+<script src="dist/movable.js"></script>
+<script src="dist/participant.js"></script>
+<script src="dist/player.js"></script>
+<script src="dist/script.js"></script>
+<script src="dist/createPlayers.js"></script>
+<script src="dist/ball.js"></script>
+<script src="dist/referees.js"></script>
+<script src="" type="text/javascript" charset="utf-8"></script> 
 <link rel="stylesheet" type="text/css" href="final.css">
 
 <title>Jogis Trainingssimulator</title>
@@ -25,25 +30,53 @@ Er wurde nicht kopiert und auch nicht diktiert.
 
 <body>
     <div id="Feld">
-        <h2>Klicke auf das Feld!</h2>
+        <h1>Klicke auf das Feld!</h1>
+ 
+        <h2 id="score">score:</h1>
+
+        <h2 id="posession">on the ball:</h1>
     </div>
+    
 
     <div id="overlay">
         <canvas width=850 height=450 id="canvas">
         </canvas>
     </div>
 
-    <fieldset id="ColorSelector">
-        <legend>Farbe Heimteam</legend>
-        <input type="color" id="color1" name="color1" value="#ff0000">
-        <input type="hidden" id="playerid" name="id" value="-1">
-    </fieldset>
-    
-    <fieldset id="ColorSelector">
-        <legend>Farbe Gegnerteam</legend>
-        <input type="color" id="color2" name="color2" value="#3632a8">
-        <input type="hidden" id="playerid" name="id" value="-1">
-    </fieldset>
+    <div id="FormBox">
+
+        <form id="formElement" name="Formular" action="" method="get">
+
+            <fieldset>
+                <legend id="pace">speed</legend>
+                <p>minimal</p>
+                <input type="range" name="PaceSliderMin" min="0" max="100" value="20" id="PaceSliderMin">
+                <p>maximal</p>
+                <input type="range" name="PaceSliderMax" min="30" max="120" value="40" id="PaceSliderMax">
+            </fieldset>
+
+            <fieldset>
+                <legend id="Precision">Precision</legend>
+                <p>minimal</p>
+                <input type="range" name="PrecisionSliderMin" min="0" max="30" value="20" id="PrecisionSliderMin">
+                <p>maximal</p>
+                <input type="range" name="PrecisionSliderMax" min="30" max="60" value="40" id="PrecisionSliderMax">
+            </fieldset>
+           
+            <fieldset id="ColorSelector">
+                <legend>Farbe Heimteam</legend>
+                <input type="color" id="color1" name="color1" value="#ff0000">
+                <input type="hidden" id="playerid" name="id" value="-1">
+            </fieldset>
+            
+            <fieldset id="ColorSelector">
+                <legend>Farbe Gegnerteam</legend>
+                <input type="color" id="color2" name="color2" value="#3632a8">
+                <input type="hidden" id="playerid" name="id" value="-1">
+            </fieldset>
+        
+          </form>
+    </div>
 
 </body>
 
